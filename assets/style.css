@@ -4,3 +4,31 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
+
+.hero .col img{
+    width: 450px;
+    
+    
+}
+
+section {
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.about .col img {
+    width: 50%;
+}
+
+@media (max-width: 510px) {
+    .hero .col img {
+        width: 100%;
+    }
+
+    .about .col img {
+        width: 80%;
+    }
+
+
+}
+
