@@ -18,12 +18,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
         integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- cdn animated style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- cdn AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
 </head>
 
 <body>
 
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg bg-info-subtle py-4">
+    <nav class="navbar navbar-expand-lg bg-info-subtle py-4 animate__animated animate__fadeInDown">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2" href="#">
                 <img src="./assets/image/idn orian.png" alt="Logo" width="30"
@@ -39,22 +47,23 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto gap-4 pt-4 pt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link fw-bold text-primary" href="#">Home</a>
+                        <a class="nav-link fw-bold text-primary" href="#hero">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bold text-primary" href="#">About</a>
+                        <a class="nav-link fw-bold text-primary" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bold text-primary" href="#">Instagram</a>
+                        <a target="_blank" class="nav-link fw-bold text-primary"
+                            href="https://www.instagram.com/donellyabdll/">Instagram</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bold text-primary" href="#">Services</a>
+                        <a class="nav-link fw-bold text-primary" href="#services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bold text-primary" href="#">Recent</a>
+                        <a class="nav-link fw-bold text-primary" href="#recent">Recent</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fw-bold text-primary" href="#">F.A.Q</a>
+                        <a class="nav-link fw-bold text-primary" href="#faq">F.A.Q</a>
                     </li>
                 </ul>
             </div>
@@ -66,8 +75,9 @@
         <div class="container-fluid px-5">
             <div
                 class="hero row  align-items-center gap-4 flex-nowrap flex-column flex-lg-row text-center text-lg-start ">
-                <div class="col">
-                    <h1 class="fw-bold">Selamat Datang <br>Di <Span class="text-primary">Aplikasi IDN E-Report 2026
+                <div class="col text-center text-md-start animate__animated 
+                animate__fadeInLeft animate__delay-1s">
+                    <h1 class="fw-bold">Selamat Datang Di <Span class="text-primary">Aplikasi IDN E-Report 2026
                         </Span><br> Forum Pengaduan</h1>
                     <p class="lh-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, est laudantium
                         blanditiis vero
@@ -78,7 +88,8 @@
                     </div>
                 </div>
 
-                <div class="col d-flex justify-content-end justify-content-center justify-content-lg-end">
+                <div class="col d-flex justify-content-end justify-content-center justify-content-lg-end,
+                animate__animated animate__fadeInRight animate__delay-1s overflow-hidden">
                     <img src="./assets/unDraw.svg" alt="Ilustrasi Report">
                 </div>
             </div>
@@ -86,16 +97,18 @@
     </Section>
 
     <!-- about -->
-    <section>
+    <section id="about">
         <div class="container">
             <div class="about row">
                 <div class="col text-center">
-                    <h1 class="fw-bold mb-4 text-primary">About Us</h1>
-                    <p class="lh-lg mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi vel labore
+                    <h1 class="fw-bold mb-4 text-primary" data-aos="fade-up" data-aos-duration="1000">About Us</h1>
+                    <p class="lh-lg mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"> >
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi vel labore
                         sed nam, et deserunt laboriosam nemo enim voluptatum ipsa alias molestiae laborum quae facere
                         reiciendis aliquam modi, eligendi assumenda.
                     </p>
-                    <img src="./assets/undraw_working_n9u0.svg" alt="">
+                    <img src="./assets/undraw_working_n9u0.svg" alt="" data-aos="fade-up" data-aos-duration="1000"
+                        data-aos-delay="500">
                 </div>
             </div>
         </div>
@@ -105,24 +118,27 @@
     <section id="services">
         <div class="container">
             <div>
-                <h1 class="fw-bold text-primary">Our Services</h1>
-                <p class="lh-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quod accusamus totam
+                <h1 class="fw-bold text-primary" data-aos="fade-up" data-aos-duration="1000">Our Services</h1>
+                <p class="lh-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Lorem ipsum dolor sit
+                    amet consectetur adipisicing elit. Eligendi quod accusamus totam
                     laboriosam quo magnam explicabo ducimus eos odio atque?</p>
             </div>
             <div class="row p-4 p-lg-0 gap-3">
-                <div
+                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"
                     class="col bg-primary-subtle p-5 rounded-4 shadow-sm border border-1 border-primary text-primary-emphasis">
                     <i class="fa-solid fa-graduation-cap"></i>
                     <h4 class="fw-semibold">Academic Services</h4>
                     <p class="lg mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, quasi.</p>
                 </div>
-                <div
+
+                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"
                     class="col bg-primary-subtle p-5 rounded-4 shadow-sm border border-1 border-primary text-primary-emphasis">
                     <i class="fa-solid fa-screwdriver-wrench"></i>
                     <h4 class="fw-semibold">Facility Services</h4>
                     <p class="lg mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, quasi.</p>
                 </div>
-                <div
+
+                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700"
                     class="col bg-primary-subtle p-5 rounded-4 shadow-sm border border-1 border-primary text-primary-emphasis">
                     <i class="fa-solid fa-user-secret"></i>
                     <h4 class="fw-semibold">Anonymus Services</h4>
@@ -136,15 +152,15 @@
     <section id="recent">
         <div class="container">
             <div class="text-end">
-                <h1 class="fw-bold text-primary ">Recent Reports</h1>
-                <p class="lh-lg">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis quidem quam repellat
+                <h1 class="fw-bold text-primary" data-aos="fade-up" data-aos-duration="1000" >Recent Reports</h1>
+                <p class="lh-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis quidem quam repellat
                     ea,
                     nihil, maxime culpa iste perferendis iusto voluptates corporis praesentium accusantium iure
                     veritatis.
                 </p>
             </div>
             <div class="row mt-5">
-                <div class="col-12 col-md-6 col-lg-4 mt-4">
+                <div class="col-12 col-md-6 col-lg-4 mt-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700">
                     <div class="card">
                         <p style="background-color: rgba(0, 0, 0, 0.3);" class="position-absolute text-light px-3 py-2">
                             Academic</p>
@@ -160,7 +176,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 mt-4">
+                <div class="col-12 col-md-6 col-lg-4 mt-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
                     <div class="card">
                         <p style="background-color: rgba(0, 0, 0, 0.3);" class="position-absolute text-light px-3 py-2">
                             Academic</p>
@@ -176,7 +192,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 mt-4">
+                <div class="col-12 col-md-6 col-lg-4 mt-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
                     <div class="card">
                         <p style="background-color: rgba(0, 0, 0, 0.3);" class="position-absolute text-light px-3 py-2">
                             Academic</p>
@@ -199,15 +215,16 @@
     <!-- FAQ -->
     <section id="faq">
         <div class="container">
-            <h1 class="text-center mb-4 fw-bold text-primary ">F A Q</h1>
+            <h1 class="text-center mb-4 fw-bold text-primary" data-aos="fade-up" data-aos-duration="1000">F A Q</h1>
             <div class="accordion pt-4" id="faqAccordion">
 
                 <div class="row row-cols-md-2 row-cols-1 g-4">
-                    <div class="col-6">
+                    <div class="col-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                         <div class="accordion-item">
                             <h3 class="accordion-header" id="headingOne">
-                                <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faqone" aria-expanded="true" aria-controls="faqone">
+                                <button class="accordion-button bg-primary text-white" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faqone" aria-expanded="true"
+                                    aria-controls="faqone">
                                     What is your return policy?
                                 </button>
                             </h3>
@@ -220,11 +237,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
                         <div class="accordion-item">
                             <h3 class="accordion-header" id="headingOne">
-                                <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faqtwo" aria-expanded="true" aria-controls="faqtwo">
+                                <button class="accordion-button bg-primary text-white" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faqtwo" aria-expanded="true"
+                                    aria-controls="faqtwo">
                                     What is your return policy?
                                 </button>
                             </h3>
@@ -237,11 +255,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
                         <div class="accordion-item">
                             <h3 class="accordion-header" id="headingOne">
-                                <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faq3" aria-expanded="true" aria-controls="faq3">
+                                <button class="accordion-button bg-primary text-white" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="true"
+                                    aria-controls="faq3">
                                     What is your return policy?
                                 </button>
                             </h3>
@@ -254,11 +273,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
                         <div class="accordion-item">
                             <h3 class="accordion-header" id="headingOne">
-                                <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faqo4" aria-expanded="true" aria-controls="faqo4">
+                                <button class="accordion-button bg-primary text-white" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faqo4" aria-expanded="true"
+                                    aria-controls="faqo4">
                                     What is your return policy?
                                 </button>
                             </h3>
@@ -271,11 +291,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
                         <div class="accordion-item">
                             <h3 class="accordion-header" id="headingOne">
-                                <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faq5" aria-expanded="true" aria-controls="faq5">
+                                <button class="accordion-button bg-primary text-white" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="true"
+                                    aria-controls="faq5">
                                     What is your return policy?
                                 </button>
                             </h3>
@@ -288,11 +309,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
                         <div class="accordion-item">
                             <h3 class="accordion-header" id="headingOne">
-                                <button class="accordion-button bg-primary text-white" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#faq6" aria-expanded="true" aria-controls="faq6">
+                                <button class="accordion-button bg-primary text-white" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="true"
+                                    aria-controls="faq6">
                                     What is your return policy?
                                 </button>
                             </h3>
@@ -313,45 +335,51 @@
     <!-- footer -->
     <footer class="bg-primary">
         <div class="container">
-            <div class="row justify-content-between row-gap-4 py-5">
+            <div class="row justify-content-between  row-gap-4 py-5 ">
 
                 <div class="col text-white">
                     <div class="d-flex align-items-center gap-2 mb-2">
                         <img src="assets/image/idn ori.webp" alt="Logo" width="30px"
-                            class="d-inline-block align-text-top rounded">
+                            class="d-inline-block align-text-top rounded" >
                         <h2 class="fw-bold m-0">E-reports</h2>
                     </div>
-                    <p class="lh-lg opacity-75 m-0 text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia,
+                    <p class="lh-lg opacity-75 m-0 text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        Officia,
                         repellendus!</p>
                 </div>
 
                 <div class="col d-flex flex-column gap-2 text-center">
                     <h4 class="fw-bold text-white">Menu</h4>
-                    <a href="" class="footer-link text-white text-decoration-none">home</a>
-                    <a href="" class="footer-link text-white text-decoration-none">about</a>
-                    <a href="" class="footer-link text-white text-decoration-none">services</a>
-                    <a href="" class="footer-link text-white text-decoration-none">recent</a>
-                    <a href="" class="footer-link text-white text-decoration-none">FAQ</a>
+                    <a href="#hero" class="footer-link text-white text-decoration-none">home</a>
+                    <a href="#about" class="footer-link text-white text-decoration-none">about</a>
+                    <a href="#services" class="footer-link text-white text-decoration-none">services</a>
+                    <a href="#recent" class="footer-link text-white text-decoration-none">recent</a>
+                    <a href="#faq" class="footer-link text-white text-decoration-none">FAQ</a>
                 </div>
 
-                <div class="col d-flex flex-column gap-2 text-white">
+                <div class="col d-flex flex-column  gap-2 text-white text-center text-md-start">
                     <h4 class="fw-bold ">Contact Us</h4>
                     <p class="m-0 d-flex align-items-center gap-2">
                         <i class="fas fa-envelope"></i>
                         donellyabdll@idn.sch.id
-                    </p><br>
+                    </p>
                     <p class="m-0 d-flex align-items-center gap-2">
                         <a href="https://wa.me/6285199683299" target="_blank" class="text-white text-decoration-none">
                             <i class="fab fa-whatsapp"></i>
-                            WhatsApp 
+                            WhatsApp
                         </a>
-                    </p> <br>
+                    </p> 
                     <p class="m-0 d-flex align-items-center gap-2">
                         <i class="fas fa-map-marker-alt"></i>
-                        Jalan Raya Serang KM 15, Cikande, Banten
+                        Jalan Raya Serang , Cikande
 
                     </p>
                 </div>
+            </div>
+
+            <div class="copyright text-center text-white">
+                <p>&copy; Copyright by <span class="fw-bold">RPL-C class</span>2026, All Rights Reserved</p>
+
             </div>
         </div>
 
@@ -364,9 +392,16 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
         integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
         crossorigin="anonymous"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

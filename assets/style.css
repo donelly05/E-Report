@@ -32,6 +32,20 @@ footer{
 .footer-link:hover{
     opacity:100%;
 }
+
+.copyright{
+    margin-top: 50px
+}
+
+.html{
+    scroll-behavior: smooth;
+}
+
+.hero .col:nth-child(1) {
+   --animate-delay: 0.5s;
+}
+
+    
 @media (max-width: 510px) {
     .hero .col img {
         width: 100%;
