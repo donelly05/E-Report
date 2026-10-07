@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Panduan | IDN E-Report</title>
+    <link rel="shortcut icon" href="./assets/image/idn logo.jpg" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <style>
+:root {
+    --ink: #14213d;
+    --blue: #2352e6;
+    --blue-dark: #1b41bd;
+    --blue-soft: #eaf0ff;
+    --paper: #f5f7fc;
+    --line: #e1e6f1;
+    --muted: #5a6784;
+    --amber: #f4b000;
+
+    --bs-primary: #2352e6;
+    --bs-primary-rgb: 35, 82, 230;
+    --bs-primary-bg-subtle: #eaf0ff;
+    --bs-primary-border-subtle: #c9d7fb;
+    --bs-primary-text-emphasis: #14213d;
+    --bs-link-color-rgb: 35, 82, 230;
+    --bs-link-hover-color-rgb: 27, 65, 189;
+    --bs-body-font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --bs-body-color: #26324f;
+    --bs-body-bg: #ffffff;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--bs-body-font-family); color: var(--bs-body-color); -webkit-font-smoothing: antialiased; }
+section[id] { scroll-margin-top: 76px; }
+
+h1, h2, h3, h4, h5 { color: var(--ink); letter-spacing: -0.02em; font-weight: 700; }
+p { max-width: 65ch; }
+.text-center p, .text-end p { margin-left: auto; margin-right: auto; }
+.text-end p { margin-right: 0; }
+
+:focus-visible { outline: 3px solid rgba(35, 82, 230, .45); outline-offset: 2px; border-radius: 6px; }
+
+/* ---------- buttons ---------- */
+.btn { font-weight: 600; border-radius: 999px; padding: .65rem 1.4rem; transition: background-color .15s, color .15s, border-color .15s; }
+.btn-primary { --bs-btn-bg: var(--blue); --bs-btn-border-color: var(--blue); --bs-btn-hover-bg: var(--blue-dark); --bs-btn-hover-border-color: var(--blue-dark); --bs-btn-active-bg: var(--blue-dark); --bs-btn-active-border-color: var(--blue-dark); --bs-btn-focus-shadow-rgb: 35, 82, 230; }
+.btn-outline-primary { --bs-btn-color: var(--blue); --bs-btn-border-color: #b9c9f7; --bs-btn-hover-bg: var(--blue-soft); --bs-btn-hover-color: var(--blue-dark); --bs-btn-hover-border-color: var(--blue); --bs-btn-active-bg: var(--blue-soft); --bs-btn-active-color: var(--blue-dark); }
+.btn-sm { padding: .45rem 1rem; }
+
+/* ---------- navbar ---------- */
+.navbar { background: rgba(255, 255, 255, .92) !important; backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); padding: .85rem 0 !important; }
+.navbar-brand img { width: 34px; height: 34px; object-fit: cover; }
+.navbar-brand span { color: var(--ink) !important; font-weight: 800 !important; letter-spacing: -0.02em; }
+.navbar .nav-link { color: var(--muted) !important; font-weight: 600 !important; padding: .5rem .15rem; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; }
+.navbar .nav-link:hover { color: var(--ink) !important; }
+.navbar .nav-link.active { color: var(--blue) !important; border-bottom-color: var(--blue); }
+@media (max-width: 991.98px) {
+    .navbar-nav { padding-bottom: .75rem; gap: .25rem !important; }
+    .navbar .nav-link { display: inline-block; }
+}
+
+/* ---------- section rhythm ---------- */
+.section-pad { padding: 5rem 0; }
+.section-alt { background: var(--paper); }
+.section-head { margin-bottom: 2.5rem; }
+.section-head h1, .section-head h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); margin-bottom: .75rem; color: var(--ink) !important; }
+.section-head p { color: var(--muted); line-height: 1.8; margin-bottom: 0; }
+
+/* ---------- hero ---------- */
+.hero-section { background: var(--paper); padding: 4.5rem 0 5rem; overflow: hidden; }
+.hero-section h1 { font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.15; letter-spacing: -0.03em; font-weight: 800; }
+.hero-section h1 .brand-name { color: var(--blue) !important; display: block; }
+.hero-section p { color: var(--muted); font-size: 1.05rem; max-width: 52ch; }
+.hero-art { background: #fff; border: 1px solid var(--line); border-radius: 1.75rem; padding: 2rem; }
+.hero-art img { width: 100%; height: auto; max-height: 400px; object-fit: contain; }
+
+/* ---------- about ---------- */
+.about-art { max-width: 520px; width: 100%; height: auto; }
+
+/* ---------- services ---------- */
+.service-card { background: #fff; border: 1px solid var(--line); border-radius: 1.25rem; padding: 2rem; height: 100%; transition: border-color .2s; }
+.service-card:hover { border-color: var(--blue); }
+.service-icon { width: 52px; height: 52px; border-radius: 14px; display: inline-flex; align-items: center; justify-content: center; background: var(--blue-soft); color: var(--blue); font-size: 1.25rem; margin-bottom: 1.25rem; }
+.service-card h4 { font-size: 1.15rem; margin-bottom: .5rem; }
+.service-card p { color: var(--muted); margin: 0; line-height: 1.7; }
+
+/* ---------- report cards ---------- */
+.report-card { background: #fff; border: 1px solid var(--line); border-radius: 1.25rem; overflow: hidden; height: 100%; display: flex; flex-direction: column; transition: border-color .2s, transform .2s; }
+.report-card:hover { border-color: var(--blue); transform: translateY(-3px); }
+.report-thumb { position: relative; }
+.report-thumb img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+.chip { position: absolute; top: .85rem; left: .85rem; background: #fff; color: var(--ink); font-size: .8rem; font-weight: 700; padding: .3rem .8rem; border-radius: 999px; display: inline-flex; align-items: center; gap: .4rem; margin: 0; }
+.chip::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); }
+.report-body { padding: 1.4rem 1.5rem 1.6rem; display: flex; flex-direction: column; flex: 1; }
+.report-body h5 { font-size: 1.15rem; margin-bottom: .5rem; text-align: left !important; }
+.report-meta { color: var(--muted); font-size: .85rem; margin-bottom: 1rem !important; }
+.report-meta a { color: var(--blue); font-weight: 600; text-decoration: none; }
+.report-meta a:hover { text-decoration: underline !important; }
+.report-body .card-text { color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+.report-body .btn { margin-top: auto; align-self: flex-start; }
+
+/* ---------- faq ---------- */
+#faqAccordion { --bs-accordion-active-bg: var(--blue-soft); --bs-accordion-active-color: var(--blue-dark); --bs-accordion-btn-focus-box-shadow: 0 0 0 3px rgba(35, 82, 230, .25); }
+#faqAccordion .accordion-item { border: 1px solid var(--line) !important; border-radius: 1rem !important; overflow: hidden; background: #fff; }
+#faqAccordion .accordion-button { background: #fff; color: var(--ink); font-weight: 700; padding: 1.15rem 1.35rem; border-radius: 0 !important; box-shadow: none; }
+#faqAccordion .accordion-button:not(.collapsed) { background: var(--blue-soft); color: var(--blue-dark); }
+#faqAccordion .accordion-body { color: var(--muted); line-height: 1.75; padding: 1.1rem 1.35rem 1.35rem; }
+
+/* ---------- footer ---------- */
+footer.site-footer { background: var(--ink) !important; color: #fff; }
+footer.site-footer h2 { font-size: 1.4rem; color: #fff; }
+footer.site-footer h4 { font-size: 1rem; color: #fff; margin-bottom: .75rem; }
+footer.site-footer .footer-link { opacity: .75; transition: opacity .15s; }
+footer.site-footer .footer-link:hover { opacity: 1; text-decoration: underline !important; }
+footer.site-footer .copyright { border-top: 1px solid rgba(255, 255, 255, .15); padding: 1.25rem 0; font-size: .9rem; opacity: .8; }
+footer.site-footer .copyright p { margin: 0 auto; }
+footer.site-footer .footer-brand img { width: 34px; height: 34px; object-fit: cover; }
+.contact-list p { opacity: .85; }
+.contact-list i { width: 1.25rem; text-align: center; }
+
+/* ---------- reports page ---------- */
+.page-head { background: var(--paper); border-bottom: 1px solid var(--line); padding: 3.5rem 0 3rem; }
+.page-head h1 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; }
+.page-head p { color: var(--muted); line-height: 1.8; margin-bottom: 0; }
+.crumbs { font-size: .9rem; margin-bottom: 1rem; color: var(--muted); }
+.crumbs a { color: var(--blue); text-decoration: none; font-weight: 600; }
+.crumbs a:hover { text-decoration: underline; }
+.toolbar { background: #fff; border: 1px solid var(--line); border-radius: 1.25rem; padding: 1rem; margin-top: -1.75rem; position: relative; box-shadow: 0 10px 30px rgba(20, 33, 61, .06); }
+.toolbar .form-control, .toolbar .form-select { border-radius: .8rem; border-color: var(--line); padding: .7rem 1rem; box-shadow: none !important; }
+.toolbar .form-control:focus, .toolbar .form-select:focus { border-color: var(--blue); }
+.toolbar .btn { border-radius: .8rem; }
+.search-wrap { position: relative; }
+.search-wrap i { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+.search-wrap .form-control { padding-left: 2.6rem; }
+.result-count { color: var(--muted); font-size: .95rem; }
+.empty-state { text-align: center; padding: 4rem 1rem; border: 1px dashed #c3cde6; border-radius: 1.25rem; color: var(--muted); }
+.empty-state i { font-size: 2rem; color: var(--blue); margin-bottom: 1rem; }
+.empty-state h5 { color: var(--ink); }
+.empty-state p { margin: 0 auto; }
+.pagination { --bs-pagination-color: var(--ink); --bs-pagination-hover-color: var(--blue-dark); --bs-pagination-hover-bg: var(--blue-soft); --bs-pagination-active-bg: var(--blue); --bs-pagination-active-border-color: var(--blue); --bs-pagination-focus-box-shadow: 0 0 0 3px rgba(35, 82, 230, .25); gap: .35rem; }
+.pagination .page-link { border-radius: .7rem !important; border-color: var(--line); font-weight: 600; min-width: 2.5rem; text-align: center; }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .animate__animated { animation: none !important; }
+    .report-card, .service-card, .btn { transition: none; }
+    .report-card:hover { transform: none; }
+}
+
+/* ---------- halaman panduan ---------- */
+.guide-hero { background: var(--paper); border-bottom: 1px solid var(--line); padding: 3.5rem 0 3rem; }
+.guide-hero h1 { font-size: clamp(2rem, 4.2vw, 3.1rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.03em; }
+.guide-hero p { color: var(--muted); line-height: 1.8; font-size: 1.05rem; }
+.stepper { display: grid; gap: 2rem; grid-template-columns: 1fr; }
+@media (min-width: 992px) { .stepper { grid-template-columns: 5fr 7fr; align-items: start; } .screen-col { position: sticky; top: 96px; } }
+.progress-track { height: 6px; background: var(--line); border-radius: 99px; overflow: hidden; margin-bottom: 1.25rem; }
+.progress-fill { height: 100%; width: 20%; background: var(--blue); border-radius: 99px; transition: width .35s ease; }
+.step-list { display: flex; flex-direction: column; gap: .6rem; }
+.step-btn { display: flex; gap: 1rem; align-items: flex-start; text-align: left; width: 100%; background: #fff; border: 1px solid var(--line); border-radius: 1rem; padding: 1rem 1.15rem; color: var(--ink); transition: border-color .15s, background-color .15s; }
+.step-btn:hover { border-color: #b9c9f7; }
+.step-btn .num { flex: 0 0 auto; width: 36px; height: 36px; border-radius: 50%; background: var(--paper); color: var(--muted); font-weight: 800; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line); }
+.step-btn strong { display: block; font-size: 1.02rem; }
+.step-btn span.desc { display: none; color: var(--muted); font-size: .92rem; line-height: 1.65; margin-top: .25rem; }
+.step-btn.active { border-color: var(--blue); background: var(--blue-soft); }
+.step-btn.active .num { background: var(--blue); color: #fff; border-color: var(--blue); }
+.step-btn.active span.desc { display: block; }
+.step-btn.done .num { background: #fff; color: var(--blue); border-color: var(--blue); }
+.step-nav { display: flex; gap: .75rem; margin-top: 1.25rem; }
+
+.screen { background: #fff; border: 1px solid var(--line); border-radius: 1.5rem; overflow: hidden; box-shadow: 0 20px 50px rgba(20, 33, 61, .08); }
+.screen-bar { display: flex; align-items: center; gap: .4rem; padding: .8rem 1rem; background: var(--paper); border-bottom: 1px solid var(--line); }
+.screen-bar i { width: 10px; height: 10px; border-radius: 50%; background: #cfd7ea; }
+.screen-bar .url { margin-left: .75rem; flex: 1; background: #fff; border: 1px solid var(--line); border-radius: 99px; padding: .15rem .8rem; font-size: .78rem; color: var(--muted); }
+.pane { display: none; padding: 1.75rem; min-height: 360px; }
+.pane.active { display: block; animation: paneIn .3s ease; }
+@keyframes paneIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.pane h6 { font-weight: 800; margin-bottom: 1rem; }
+.mock-line { height: 10px; border-radius: 99px; background: var(--line); margin-bottom: .6rem; }
+.mock-btn { display: inline-block; background: var(--blue); color: #fff; font-weight: 700; font-size: .85rem; padding: .5rem 1.1rem; border-radius: 99px; }
+.mock-btn.ghost { background: #fff; color: var(--blue); border: 1px solid #b9c9f7; }
+.mock-input { border: 1px solid var(--line); border-radius: .8rem; padding: .6rem .9rem; font-size: .88rem; color: var(--muted); background: #fff; margin-bottom: .75rem; }
+.mock-input.area { min-height: 84px; }
+.focus-ring { outline: 3px solid var(--amber); outline-offset: 3px; }
+.mock-tile { border: 1px solid var(--line); border-radius: 1rem; padding: 1rem; text-align: center; font-weight: 700; font-size: .88rem; }
+.mock-tile i { display: block; font-size: 1.3rem; color: var(--blue); margin-bottom: .5rem; }
+.mock-tile.sel { border-color: var(--blue); background: var(--blue-soft); }
+.mock-row { display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--line); border-radius: .9rem; padding: .75rem 1rem; margin-bottom: .6rem; font-size: .9rem; font-weight: 600; }
+.mock-row small { color: var(--muted); font-weight: 500; }
+.pane-note { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px dashed #c3cde6; color: var(--muted); font-size: .92rem; line-height: 1.7; }
+
+.tips-box { background: var(--ink); color: #fff; border-radius: 1.75rem; padding: clamp(1.75rem, 4vw, 3rem); }
+.tips-box h2 { color: #fff; font-size: clamp(1.5rem, 3vw, 2rem); }
+.tips-box li { display: flex; gap: .85rem; margin-bottom: 1rem; line-height: 1.7; opacity: .92; }
+.tips-box li i { color: var(--amber); margin-top: .3rem; }
+.tips-box ul { list-style: none; padding: 0; margin: 0; }
+.avoid li i { color: #ff8a8a; }
+.cta-band { background: var(--blue-soft); border: 1px solid #c9d7fb; border-radius: 1.75rem; padding: 2.5rem; }
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="./assets/image/idn orian.png" alt="Logo IDN" class="rounded">
+                <span>IDN E-Report</span>
+            </a>
+            <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-lg-4 pt-3 pt-lg-0 align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reports.html">Reports</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="panduan.html">Guide</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#faq">F.A.Q</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header class="guide-hero">
+            <div class="container">
+                <p class="crumbs"><a href="index.html">Home</a> &nbsp;/&nbsp; Guide</p>
+                <h1 class="mb-3">Cara menggunakan IDN E-Report</h1>
+                <p class="mb-0">Lima langkah dari menemukan masalah sampai laporan Anda dipantau. Klik tiap langkah untuk melihat contoh tampilannya.</p>
+            </div>
+        </header>
+
+        <section class="py-5 my-lg-4">
+            <div class="container">
+                <div class="stepper">
+                    <!-- daftar langkah -->
+                    <div>
+                        <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="fill"></div></div>
+                        <div class="step-list" role="tablist" aria-label="Langkah penggunaan">
+                            <button class="step-btn active" role="tab" data-i="0" aria-selected="true">
+                                <span class="num">1</span>
+                                <span><strong>Buka halaman laporan</strong>
+                                <span class="desc">Dari beranda, tekan <b>Let's Start</b> atau pilih menu Reports untuk masuk ke daftar semua laporan.</span></span>
+                            </button>
+                            <button class="step-btn" role="tab" data-i="1" aria-selected="false">
+                                <span class="num">2</span>
+                                <span><strong>Cek laporan yang sudah ada</strong>
+                                <span class="desc">Ketik kata kunci di kolom pencarian atau pilih kategori. Kalau masalahnya sudah dilaporkan, cukup beri komentar di laporan itu.</span></span>
+                            </button>
+                            <button class="step-btn" role="tab" data-i="2" aria-selected="false">
+                                <span class="num">3</span>
+                                <span><strong>Pilih jenis layanan</strong>
+                                <span class="desc">Tentukan apakah laporan Anda soal akademik, fasilitas, atau ingin dikirim tanpa menampilkan nama.</span></span>
+                            </button>
+                            <button class="step-btn" role="tab" data-i="3" aria-selected="false">
+                                <span class="num">4</span>
+                                <span><strong>Tulis dan kirim laporan</strong>
+                                <span class="desc">Isi judul dan uraian masalah dengan jelas, lampirkan foto bila ada, lalu kirim.</span></span>
+                            </button>
+                            <button class="step-btn" role="tab" data-i="4" aria-selected="false">
+                                <span class="num">5</span>
+                                <span><strong>Pantau status dan komentar</strong>
+                                <span class="desc">Buka detail laporan untuk melihat status penanganan dan membaca atau menulis komentar.</span></span>
+                            </button>
+                        </div>
+                        <div class="step-nav">
+                            <button class="btn btn-outline-primary" id="prev" type="button"><i class="fa-solid fa-arrow-left me-1"></i> Sebelumnya</button>
+                            <button class="btn btn-primary" id="next" type="button">Berikutnya <i class="fa-solid fa-arrow-right ms-1"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- layar contoh -->
+                    <div class="screen-col">
+                        <div class="screen" aria-live="polite">
+                            <div class="screen-bar"><i></i><i></i><i></i><span class="url">e-report.idn.sch.id</span></div>
+
+                            <div class="pane active" data-pane="0">
+                                <h6>Beranda</h6>
+                                <div class="mock-line" style="width:70%"></div>
+                                <div class="mock-line" style="width:90%"></div>
+                                <div class="mock-line mb-4" style="width:55%"></div>
+                                <span class="mock-btn focus-ring">Let's Start</span>
+                                <span class="mock-btn ghost ms-2">About Us</span>
+                                <p class="pane-note">Tombol yang disorot membawa Anda ke halaman <b>All Reports</b>.</p>
+                            </div>
+
+                            <div class="pane" data-pane="1">
+                                <h6>All Reports</h6>
+                                <div class="mock-input focus-ring"><i class="fa-solid fa-magnifying-glass me-2"></i>keran masjid</div>
+                                <div class="mock-row"><span>Laporan keran masjid rusak<br><small>Fasilitas &nbsp;|&nbsp; 1 jam yang lalu</small></span><i class="fa-solid fa-chevron-right text-primary"></i></div>
+                                <div class="mock-row"><span>Keran wudhu putri bocor<br><small>Fasilitas &nbsp;|&nbsp; 3 hari yang lalu</small></span><i class="fa-solid fa-chevron-right text-primary"></i></div>
+                                <p class="pane-note">Ada hasil yang mirip? Buka laporannya dan tambahkan komentar supaya laporan tidak ganda.</p>
+                            </div>
+
+                            <div class="pane" data-pane="2">
+                                <h6>Pilih layanan</h6>
+                                <div class="row g-3">
+                                    <div class="col-4"><div class="mock-tile"><i class="fa-solid fa-graduation-cap"></i>Academic</div></div>
+                                    <div class="col-4"><div class="mock-tile sel"><i class="fa-solid fa-screwdriver-wrench"></i>Facility</div></div>
+                                    <div class="col-4"><div class="mock-tile"><i class="fa-solid fa-user-secret"></i>Anonymous</div></div>
+                                </div>
+                                <p class="pane-note">Contoh: keran rusak, AC mati, atau Wi-Fi lambat masuk ke <b>Facility</b>. Laporan tanpa nama masuk ke <b>Anonymous</b>.</p>
+                            </div>
+
+                            <div class="pane" data-pane="3">
+                                <h6>Laporan baru</h6>
+                                <div class="mock-input">Keran wudhu masjid putra rusak</div>
+                                <div class="mock-input area">Aliran air kecil dan bocor terus sejak 2 hari lalu...</div>
+                                <div class="mock-input"><i class="fa-regular fa-image me-2"></i>Tambah foto (opsional)</div>
+                                <span class="mock-btn focus-ring">Kirim laporan <i class="fa-solid fa-paper-plane ms-1"></i></span>
+                                <p class="pane-note">Sebut lokasi, sejak kapan terjadi, dan dampaknya. Makin jelas, makin cepat ditangani.</p>
+                            </div>
+
+                            <div class="pane" data-pane="4">
+                                <h6>Detail laporan</h6>
+                                <span class="status-chip" style="display:inline-flex;align-items:center;gap:.5rem;background:#fff6dc;color:#7a5600;font-weight:700;font-size:.85rem;padding:.35rem .9rem;border-radius:99px;margin-bottom:1rem">Menunggu Penanganan</span>
+                                <div class="mock-line" style="width:85%"></div>
+                                <div class="mock-line mb-4" style="width:60%"></div>
+                                <div class="mock-input focus-ring">Tulis komentar Anda...</div>
+                                <p class="pane-note">Status laporan tampil di bagian atas. Kembali lagi kapan saja untuk melihat perkembangannya.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pb-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-7">
+                        <div class="tips-box h-100">
+                            <h2 class="mb-4">Supaya laporan cepat ditangani</h2>
+                            <ul>
+                                <li><i class="fa-solid fa-check"></i>Tulis judul yang spesifik, misalnya "Keran wudhu masjid putra rusak".</li>
+                                <li><i class="fa-solid fa-check"></i>Cantumkan lokasi, waktu kejadian, dan dampak yang dirasakan.</li>
+                                <li><i class="fa-solid fa-check"></i>Lampirkan foto yang jelas jika ada.</li>
+                                <li class="mb-0"><i class="fa-solid fa-check"></i>Gunakan bahasa yang sopan dan fokus pada masalahnya.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="tips-box h-100 avoid" style="background:#fff;color:var(--ink);border:1px solid var(--line)">
+                            <h2 class="mb-4" style="color:var(--ink)">Hindari</h2>
+                            <ul>
+                                <li><i class="fa-solid fa-xmark"></i>Menyebut nama orang untuk menyalahkan.</li>
+                                <li><i class="fa-solid fa-xmark"></i>Mengirim laporan yang sama berulang kali.</li>
+                                <li class="mb-0"><i class="fa-solid fa-xmark"></i>Menyebarkan informasi yang belum pasti kebenarannya.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-band mt-4 d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+                    <div>
+                        <h3 class="h4 mb-1">Sudah paham alurnya?</h3>
+                        <p class="mb-0 text-secondary">Mulai dengan melihat laporan yang sudah masuk.</p>
+                    </div>
+                    <a href="reports.html" class="btn btn-primary btn-lg flex-shrink-0">Spill the tea</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row justify-content-between row-gap-4 py-5">
+                <div class="col-lg-4">
+                    <div class="footer-brand d-flex align-items-center gap-2 mb-3">
+                        <img src="assets/image/idn ori.webp" alt="Logo IDN" class="rounded">
+                        <h2 class="fw-bold m-0">E-Reports</h2>
+                    </div>
+                    <p class="lh-lg opacity-75 m-0">Platform pelaporan online untuk warga sekolah: cepat, aman, dan transparan.</p>
+                </div>
+                <div class="col-6 col-lg-3 d-flex flex-column gap-2">
+                    <h4>Menu</h4>
+                    <a href="index.html" class="footer-link text-white text-decoration-none">Home</a>
+                    <a href="index.html#about" class="footer-link text-white text-decoration-none">About</a>
+                    <a href="index.html#services" class="footer-link text-white text-decoration-none">Services</a>
+                    <a href="panduan.html" class="footer-link text-white text-decoration-none">Guide</a>
+                    <a href="index.html#faq" class="footer-link text-white text-decoration-none">FAQ</a>
+                </div>
+                <div class="col-6 col-lg-4 contact-list d-flex flex-column gap-2">
+                    <h4>Contact Us</h4>
+                    <p class="m-0 d-flex align-items-center gap-2"><i class="fas fa-envelope"></i> donellyabdll@idn.sch.id</p>
+                    <p class="m-0"><a href="https://wa.me/6285199683299" target="_blank" rel="noopener" class="text-white text-decoration-none d-flex align-items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp</a></p>
+                    <p class="m-0 d-flex align-items-center gap-2"><i class="fas fa-map-marker-alt"></i> Jalan Raya Serang, Cikande</p>
+                </div>
+            </div>
+            <div class="copyright text-center">
+                <p>&copy; Copyright by <span class="fw-bold">RPL-C class</span> 2026, All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    <script>
+        (function () {
+            var btns = [].slice.call(document.querySelectorAll('.step-btn'));
+            var panes = [].slice.call(document.querySelectorAll('.pane'));
+            var fill = document.getElementById('fill');
+            var prev = document.getElementById('prev');
+            var next = document.getElementById('next');
+            var cur = 0;
+
+            function go(i) {
+                cur = Math.max(0, Math.min(btns.length - 1, i));
+                btns.forEach(function (b, n) {
+                    b.classList.toggle('active', n === cur);
+                    b.classList.toggle('done', n < cur);
+                    b.setAttribute('aria-selected', n === cur);
+                });
+                panes.forEach(function (p, n) { p.classList.toggle('active', n === cur); });
+                fill.style.width = ((cur + 1) / btns.length * 100) + '%';
+                prev.disabled = cur === 0;
+                next.disabled = cur === btns.length - 1;
+            }
+            btns.forEach(function (b, n) { b.addEventListener('click', function () { go(n); }); });
+            prev.addEventListener('click', function () { go(cur - 1); });
+            next.addEventListener('click', function () { go(cur + 1); });
+            go(0);
+        })();
+    </script>
+</body>
+
+</html>

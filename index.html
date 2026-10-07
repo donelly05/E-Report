@@ -1,11 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home | E-Report</title>
     <link rel="shortcut icon" href="./assets/image/idn logo.jpg" type="image/x-icon">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -25,18 +30,157 @@
     <!-- cdn AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <!-- tema tampilan (dimuat terakhir agar menimpa style bawaan) -->
+    <style>
+:root {
+    --ink: #14213d;
+    --blue: #2352e6;
+    --blue-dark: #1b41bd;
+    --blue-soft: #eaf0ff;
+    --paper: #f5f7fc;
+    --line: #e1e6f1;
+    --muted: #5a6784;
+    --amber: #f4b000;
 
+    --bs-primary: #2352e6;
+    --bs-primary-rgb: 35, 82, 230;
+    --bs-primary-bg-subtle: #eaf0ff;
+    --bs-primary-border-subtle: #c9d7fb;
+    --bs-primary-text-emphasis: #14213d;
+    --bs-link-color-rgb: 35, 82, 230;
+    --bs-link-hover-color-rgb: 27, 65, 189;
+    --bs-body-font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --bs-body-color: #26324f;
+    --bs-body-bg: #ffffff;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--bs-body-font-family); color: var(--bs-body-color); -webkit-font-smoothing: antialiased; }
+section[id] { scroll-margin-top: 76px; }
+
+h1, h2, h3, h4, h5 { color: var(--ink); letter-spacing: -0.02em; font-weight: 700; }
+p { max-width: 65ch; }
+.text-center p, .text-end p { margin-left: auto; margin-right: auto; }
+.text-end p { margin-right: 0; }
+
+:focus-visible { outline: 3px solid rgba(35, 82, 230, .45); outline-offset: 2px; border-radius: 6px; }
+
+/* ---------- buttons ---------- */
+.btn { font-weight: 600; border-radius: 999px; padding: .65rem 1.4rem; transition: background-color .15s, color .15s, border-color .15s; }
+.btn-primary { --bs-btn-bg: var(--blue); --bs-btn-border-color: var(--blue); --bs-btn-hover-bg: var(--blue-dark); --bs-btn-hover-border-color: var(--blue-dark); --bs-btn-active-bg: var(--blue-dark); --bs-btn-active-border-color: var(--blue-dark); --bs-btn-focus-shadow-rgb: 35, 82, 230; }
+.btn-outline-primary { --bs-btn-color: var(--blue); --bs-btn-border-color: #b9c9f7; --bs-btn-hover-bg: var(--blue-soft); --bs-btn-hover-color: var(--blue-dark); --bs-btn-hover-border-color: var(--blue); --bs-btn-active-bg: var(--blue-soft); --bs-btn-active-color: var(--blue-dark); }
+.btn-sm { padding: .45rem 1rem; }
+
+/* ---------- navbar ---------- */
+.navbar { background: rgba(255, 255, 255, .92) !important; backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); padding: .85rem 0 !important; }
+.navbar-brand img { width: 34px; height: 34px; object-fit: cover; }
+.navbar-brand span { color: var(--ink) !important; font-weight: 800 !important; letter-spacing: -0.02em; }
+.navbar .nav-link { color: var(--muted) !important; font-weight: 600 !important; padding: .5rem .15rem; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; }
+.navbar .nav-link:hover { color: var(--ink) !important; }
+.navbar .nav-link.active { color: var(--blue) !important; border-bottom-color: var(--blue); }
+@media (max-width: 991.98px) {
+    .navbar-nav { padding-bottom: .75rem; gap: .25rem !important; }
+    .navbar .nav-link { display: inline-block; }
+}
+
+/* ---------- section rhythm ---------- */
+.section-pad { padding: 5rem 0; }
+.section-alt { background: var(--paper); }
+.section-head { margin-bottom: 2.5rem; }
+.section-head h1, .section-head h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); margin-bottom: .75rem; color: var(--ink) !important; }
+.section-head p { color: var(--muted); line-height: 1.8; margin-bottom: 0; }
+
+/* ---------- hero ---------- */
+.hero-section { background: var(--paper); padding: 4.5rem 0 5rem; overflow: hidden; }
+.hero-section h1 { font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.15; letter-spacing: -0.03em; font-weight: 800; }
+.hero-section h1 .brand-name { color: var(--blue) !important; display: block; }
+.hero-section p { color: var(--muted); font-size: 1.05rem; max-width: 52ch; }
+.hero-art { background: #fff; border: 1px solid var(--line); border-radius: 1.75rem; padding: 2rem; }
+.hero-art img { width: 100%; height: auto; max-height: 400px; object-fit: contain; }
+
+/* ---------- about ---------- */
+.about-art { max-width: 520px; width: 100%; height: auto; }
+
+/* ---------- services ---------- */
+.service-card { background: #fff; border: 1px solid var(--line); border-radius: 1.25rem; padding: 2rem; height: 100%; transition: border-color .2s; }
+.service-card:hover { border-color: var(--blue); }
+.service-icon { width: 52px; height: 52px; border-radius: 14px; display: inline-flex; align-items: center; justify-content: center; background: var(--blue-soft); color: var(--blue); font-size: 1.25rem; margin-bottom: 1.25rem; }
+.service-card h4 { font-size: 1.15rem; margin-bottom: .5rem; }
+.service-card p { color: var(--muted); margin: 0; line-height: 1.7; }
+
+/* ---------- report cards ---------- */
+.report-card { background: #fff; border: 1px solid var(--line); border-radius: 1.25rem; overflow: hidden; height: 100%; display: flex; flex-direction: column; transition: border-color .2s, transform .2s; }
+.report-card:hover { border-color: var(--blue); transform: translateY(-3px); }
+.report-thumb { position: relative; }
+.report-thumb img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+.chip { position: absolute; top: .85rem; left: .85rem; background: #fff; color: var(--ink); font-size: .8rem; font-weight: 700; padding: .3rem .8rem; border-radius: 999px; display: inline-flex; align-items: center; gap: .4rem; margin: 0; }
+.chip::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); }
+.report-body { padding: 1.4rem 1.5rem 1.6rem; display: flex; flex-direction: column; flex: 1; }
+.report-body h5 { font-size: 1.15rem; margin-bottom: .5rem; text-align: left !important; }
+.report-meta { color: var(--muted); font-size: .85rem; margin-bottom: 1rem !important; }
+.report-meta a { color: var(--blue); font-weight: 600; text-decoration: none; }
+.report-meta a:hover { text-decoration: underline !important; }
+.report-body .card-text { color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+.report-body .btn { margin-top: auto; align-self: flex-start; }
+
+/* ---------- faq ---------- */
+#faqAccordion { --bs-accordion-active-bg: var(--blue-soft); --bs-accordion-active-color: var(--blue-dark); --bs-accordion-btn-focus-box-shadow: 0 0 0 3px rgba(35, 82, 230, .25); }
+#faqAccordion .accordion-item { border: 1px solid var(--line) !important; border-radius: 1rem !important; overflow: hidden; background: #fff; }
+#faqAccordion .accordion-button { background: #fff; color: var(--ink); font-weight: 700; padding: 1.15rem 1.35rem; border-radius: 0 !important; box-shadow: none; }
+#faqAccordion .accordion-button:not(.collapsed) { background: var(--blue-soft); color: var(--blue-dark); }
+#faqAccordion .accordion-body { color: var(--muted); line-height: 1.75; padding: 1.1rem 1.35rem 1.35rem; }
+
+/* ---------- footer ---------- */
+footer.site-footer { background: var(--ink) !important; color: #fff; }
+footer.site-footer h2 { font-size: 1.4rem; color: #fff; }
+footer.site-footer h4 { font-size: 1rem; color: #fff; margin-bottom: .75rem; }
+footer.site-footer .footer-link { opacity: .75; transition: opacity .15s; }
+footer.site-footer .footer-link:hover { opacity: 1; text-decoration: underline !important; }
+footer.site-footer .copyright { border-top: 1px solid rgba(255, 255, 255, .15); padding: 1.25rem 0; font-size: .9rem; opacity: .8; }
+footer.site-footer .copyright p { margin: 0 auto; }
+footer.site-footer .footer-brand img { width: 34px; height: 34px; object-fit: cover; }
+.contact-list p { opacity: .85; }
+.contact-list i { width: 1.25rem; text-align: center; }
+
+/* ---------- reports page ---------- */
+.page-head { background: var(--paper); border-bottom: 1px solid var(--line); padding: 3.5rem 0 3rem; }
+.page-head h1 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; }
+.page-head p { color: var(--muted); line-height: 1.8; margin-bottom: 0; }
+.crumbs { font-size: .9rem; margin-bottom: 1rem; color: var(--muted); }
+.crumbs a { color: var(--blue); text-decoration: none; font-weight: 600; }
+.crumbs a:hover { text-decoration: underline; }
+.toolbar { background: #fff; border: 1px solid var(--line); border-radius: 1.25rem; padding: 1rem; margin-top: -1.75rem; position: relative; box-shadow: 0 10px 30px rgba(20, 33, 61, .06); }
+.toolbar .form-control, .toolbar .form-select { border-radius: .8rem; border-color: var(--line); padding: .7rem 1rem; box-shadow: none !important; }
+.toolbar .form-control:focus, .toolbar .form-select:focus { border-color: var(--blue); }
+.toolbar .btn { border-radius: .8rem; }
+.search-wrap { position: relative; }
+.search-wrap i { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+.search-wrap .form-control { padding-left: 2.6rem; }
+.result-count { color: var(--muted); font-size: .95rem; }
+.empty-state { text-align: center; padding: 4rem 1rem; border: 1px dashed #c3cde6; border-radius: 1.25rem; color: var(--muted); }
+.empty-state i { font-size: 2rem; color: var(--blue); margin-bottom: 1rem; }
+.empty-state h5 { color: var(--ink); }
+.empty-state p { margin: 0 auto; }
+.pagination { --bs-pagination-color: var(--ink); --bs-pagination-hover-color: var(--blue-dark); --bs-pagination-hover-bg: var(--blue-soft); --bs-pagination-active-bg: var(--blue); --bs-pagination-active-border-color: var(--blue); --bs-pagination-focus-box-shadow: 0 0 0 3px rgba(35, 82, 230, .25); gap: .35rem; }
+.pagination .page-link { border-radius: .7rem !important; border-color: var(--line); font-weight: 600; min-width: 2.5rem; text-align: center; }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .animate__animated { animation: none !important; }
+    .report-card, .service-card, .btn { transition: none; }
+    .report-card:hover { transform: none; }
+}
+    </style>
 </head>
 
-<body>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-root-margin="-30% 0px -60% 0px" data-bs-smooth-scroll="true" tabindex="0">
 
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg bg-info-subtle py-4 animate__animated animate__fadeInDown">
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-                <img src="./assets/image/idn orian.png" alt="Logo" width="30"
-                    class="d-inline-block align-text-top rounded">
-                <span class="fw-bold text-primary-emphasis">IDN E-Report</span>
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#hero">
+                <img src="./assets/image/idn orian.png" alt="Logo IDN" class="rounded">
+                <span>IDN E-Report</span>
             </a>
 
             <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse"
@@ -45,350 +189,295 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto gap-4 pt-4 pt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold text-primary" href="#hero">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold text-primary" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a target="_blank" class="nav-link fw-bold text-primary"
-                            href="https://www.instagram.com/donellyabdll/">Instagram</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold text-primary" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold text-primary" href="#recent">Recent</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold text-primary" href="#faq">F.A.Q</a>
-                    </li>
+                <ul class="navbar-nav ms-auto gap-lg-4 pt-3 pt-lg-0 align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#recent">Recent</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">F.A.Q</a></li>
+                    <li class="nav-item"><a class="nav-link" href="panduan.html">Guide</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <Section id="hero">
-        <div class="container-fluid px-5">
-            <div
-                class="hero row  align-items-center gap-4 flex-nowrap flex-column flex-lg-row text-center text-lg-start overflow-hidden">
-                <div class="col text-center text-md-start animate__animated 
-                animate__fadeInLeft animate__delay-1s">
-                    <h1 class="fw-bold">Selamat Datang Di <Span class="text-primary">Aplikasi IDN E-Report 2026
-                        </Span><br> Forum Pengaduan</h1>
-                    <p class="lh-lg">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, est laudantium
-                        blanditiis vero
-                        aut, veniam maxime eveniet natus, accusantium assumenda autem. Esse odio sint animi!</p>
-                    <div class="mt-5">
-                        <a href="#about" class="btn btn-primary">About Us</a>
-                        <a href="reports.html" class="btn btn-outline-primary">Let's Start</a>
+    <main>
+        <!-- Hero -->
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 text-center text-lg-start animate__animated animate__fadeInLeft">
+                        <h1 class="mb-4">Selamat Datang Di <span class="brand-name">Aplikasi IDN E-Report 2026</span>
+                            Forum Pengaduan</h1>
+                        <p class="lh-lg mx-auto mx-lg-0">Sampaikan keluhan, saran, dan laporan seputar akademik maupun fasilitas sekolah dengan mudah, aman, dan transparan. Pantau perkembangan setiap laporan kapan saja.</p>
+                        <div class="mt-4 d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+                            <a href="reports.html" class="btn btn-primary btn-lg">Let's Start</a>
+                            <a href="#about" class="btn btn-outline-primary btn-lg">About Us</a>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col d-flex justify-content-end justify-content-center justify-content-lg-end 
-                animate__animated animate__fadeInRight animate__delay-1s">
-                    <img src="./assets/unDraw.svg" alt="Ilustrasi Report">
-                </div>
-            </div>
-        </div>
-    </Section>
-
-    <!-- about -->
-    <section id="about">
-        <div class="container">
-            <div class="about row">
-                <div class="col text-center">
-                    <h1 class="fw-bold mb-4 text-primary" data-aos="fade-up" data-aos-duration="1000">About Us</h1>
-                    <p class="lh-lg mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"> >
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi vel labore
-                        sed nam, et deserunt laboriosam nemo enim voluptatum ipsa alias molestiae laborum quae facere
-                        reiciendis aliquam modi, eligendi assumenda.
-                    </p>
-                    <img src="./assets/undraw_working_n9u0.svg" alt="" data-aos="fade-up" data-aos-duration="1000"
-                        data-aos-delay="500">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- services -->
-    <section id="services">
-        <div class="container">
-            <div>
-                <h1 class="fw-bold text-primary" data-aos="fade-up" data-aos-duration="1000">Our Services</h1>
-                <p class="lh-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Lorem ipsum dolor sit
-                    amet consectetur adipisicing elit. Eligendi quod accusamus totam
-                    laboriosam quo magnam explicabo ducimus eos odio atque?</p>
-            </div>
-            <div class="row p-4 p-lg-0 gap-3">
-                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"
-                    class="col bg-primary-subtle p-5 rounded-4 shadow-sm border border-1 border-primary text-primary-emphasis">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <h4 class="fw-semibold">Academic Services</h4>
-                    <p class="lg mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, quasi.</p>
-                </div>
-
-                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"
-                    class="col bg-primary-subtle p-5 rounded-4 shadow-sm border border-1 border-primary text-primary-emphasis">
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <h4 class="fw-semibold">Facility Services</h4>
-                    <p class="lg mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, quasi.</p>
-                </div>
-
-                <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700"
-                    class="col bg-primary-subtle p-5 rounded-4 shadow-sm border border-1 border-primary text-primary-emphasis">
-                    <i class="fa-solid fa-user-secret"></i>
-                    <h4 class="fw-semibold">Anonymus Services</h4>
-                    <p class="lg mt-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, quasi.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- recent section -->
-    <section id="recent">
-        <div class="container">
-            <div class="text-end">
-                <h1 class="fw-bold text-primary" data-aos="fade-up" data-aos-duration="1000" >Recent Reports</h1>
-                <p class="lh-lg" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis quidem quam repellat
-                    ea,
-                    nihil, maxime culpa iste perferendis iusto voluptates corporis praesentium accusantium iure
-                    veritatis.
-                </p>
-            </div>
-            <div class="row mt-5">
-                <div class="col-12 col-md-6 col-lg-4 mt-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700">
-                    <div class="card">
-                        <p style="background-color: rgba(0, 0, 0, 0.3);" class="position-absolute text-light px-3 py-2">
-                            Academic</p>
-                        <img style="height: 235px; object-fit: cover;" src="./assets/image/kelas.png"
-                            class="card-img-top" alt="Kelas">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Kelas</h5>
-                            <p class="mb-4">By: <a class="text-decoration-none" href="">John Dounaily.</a> 1 day ago</p>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                            <a href="reports.html" class="btn btn-primary">Details..</a>
+                    <div class="col-lg-6 animate__animated animate__fadeInRight">
+                        <div class="hero-art">
+                            <img src="./assets/unDraw.svg" alt="Ilustrasi laporan pengaduan">
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 mt-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
-                    <div class="card">
-                        <p style="background-color: rgba(0, 0, 0, 0.3);" class="position-absolute text-light px-3 py-2">
-                            Academic</p>
-                        <img style="height: 235px; object-fit: cover;" src="./assets/image/bob.png" class="card-img-top"
-                            alt="Kelas">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Anak ilang </h5>
-                            <p class="mb-4">By: <a class="text-decoration-none" href="">John Dounaily.</a> 2 day ago</p>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                            <a href="reports.html" class="btn btn-primary">Details..</a>
+            </div>
+        </section>
+
+        <!-- about -->
+        <section id="about" class="section-pad">
+            <div class="container">
+                <div class="text-center">
+                    <div class="section-head" data-aos="fade-up">
+                        <h2>About Us</h2>
+                        <p>IDN E-Report adalah forum pengaduan online bagi seluruh warga sekolah. Setiap laporan dicatat, ditinjau oleh pihak terkait, lalu ditindaklanjuti secara terbuka agar lingkungan belajar semakin nyaman dan tertib.</p>
+                    </div>
+                    <img class="about-art" src="./assets/undraw_working_n9u0.svg" alt="Ilustrasi tim bekerja"
+                        data-aos="fade-up" data-aos-delay="150">
+                </div>
+            </div>
+        </section>
+
+        <!-- services -->
+        <section id="services" class="section-pad section-alt">
+            <div class="container">
+                <div class="section-head" data-aos="fade-up">
+                    <h2>Our Services</h2>
+                    <p>Pilih layanan yang sesuai dengan laporan Anda, mulai dari urusan akademik, fasilitas, hingga laporan tanpa identitas.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4" data-aos="fade-up">
+                        <div class="service-card">
+                            <span class="service-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                            <h4>Academic Services</h4>
+                            <p>Laporkan masalah pembelajaran seperti jadwal, materi, penilaian, atau kegiatan di kelas.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-card">
+                            <span class="service-icon"><i class="fa-solid fa-screwdriver-wrench"></i></span>
+                            <h4>Facility Services</h4>
+                            <p>Sampaikan kerusakan atau kebutuhan fasilitas sekolah seperti AC, keran air, Wi-Fi, dan ruang kelas.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-card">
+                            <span class="service-icon"><i class="fa-solid fa-user-secret"></i></span>
+                            <h4>Anonymous Services</h4>
+                            <p>Kirim laporan tanpa menampilkan nama Anda. Identitas pelapor tetap terjaga.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 mt-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-                    <div class="card">
-                        <p style="background-color: rgba(0, 0, 0, 0.3);" class="position-absolute text-light px-3 py-2">
-                            Academic</p>
-                        <img style="height: 235px; object-fit: cover;" src="./assets/image/banten.png"
-                            class="card-img-top" alt="Kelas">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Tsunami banten</h5>
-                            <p class="mb-4">By: <a class="text-decoration-none" href="">John Dounaily.</a> 4 day ago</p>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                            <a href="reports.html" class="btn btn-primary">Details..</a>
-                        </div>
+            </div>
+        </section>
+
+        <!-- recent section -->
+        <section id="recent" class="section-pad">
+            <div class="container">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 section-head" data-aos="fade-up">
+                    <div>
+                        <h2>Recent Reports</h2>
+                        <p>Laporan terbaru dari warga sekolah. Lihat apa yang sedang dilaporkan dan bagaimana perkembangan penanganannya.</p>
+                    </div>
+                    <a href="reports.html" class="btn btn-outline-primary flex-shrink-0">View all reports</a>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up">
+                        <article class="report-card">
+                            <div class="report-thumb">
+                                <p class="chip">Academic</p>
+                                <img src="./assets/image/kelas.png" alt="Ruang kelas" loading="lazy">
+                            </div>
+                            <div class="report-body">
+                                <h5>Kelas</h5>
+                                <p class="report-meta">By <a href="#">John Dounaily</a> &nbsp;|&nbsp; 1 day ago</p>
+                                <p class="card-text">Kondisi ruang kelas dinilai kurang nyaman untuk belajar. Pelapor berharap pihak sekolah segera melakukan pengecekan dan perbaikan.</p>
+                                <a href="single.html" class="btn btn-primary btn-sm">View details</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                        <article class="report-card">
+                            <div class="report-thumb">
+                                <p class="chip">Academic</p>
+                                <img src="./assets/image/bob.png" alt="Anak hilang" loading="lazy">
+                            </div>
+                            <div class="report-body">
+                                <h5>Anak ilang</h5>
+                                <p class="report-meta">By <a href="#">John Dounaily</a> &nbsp;|&nbsp; 2 days ago</p>
+                                <p class="card-text">Seorang siswa dilaporkan belum kembali ke asrama sejak sore hari. Pelapor meminta informasi dari seluruh warga sekolah.</p>
+                                <a href="single.html" class="btn btn-primary btn-sm">View details</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <article class="report-card">
+                            <div class="report-thumb">
+                                <p class="chip">Academic</p>
+                                <img src="./assets/image/banten.png" alt="Tsunami Banten" loading="lazy">
+                            </div>
+                            <div class="report-body">
+                                <h5>Tsunami banten</h5>
+                                <p class="report-meta">By <a href="#">John Dounaily</a> &nbsp;|&nbsp; 4 days ago</p>
+                                <p class="card-text">Informasi kondisi pesisir Banten yang perlu diwaspadai. Pelapor meminta arahan dan langkah antisipasi dari pihak berwenang.</p>
+                                <a href="single.html" class="btn btn-primary btn-sm">View details</a>
+                            </div>
+                        </article>
                     </div>
                 </div>
-            </div><br><br><br>
+            </div>
+        </section>
 
-            <a href="" class="text-center">More</a>
-        </div>
-    </section>
+        <!-- FAQ -->
+        <section id="faq" class="section-pad section-alt">
+            <div class="container">
+                <div class="section-head text-center" data-aos="fade-up">
+                    <h2>Frequently Asked Questions</h2>
+                    <p>Pertanyaan yang sering diajukan seputar pengiriman dan penanganan laporan.</p>
+                </div>
 
-    <!-- FAQ -->
-    <section id="faq">
-        <div class="container">
-            <h1 class="text-center mb-4 fw-bold text-primary" data-aos="fade-up" data-aos-duration="1000">F A Q</h1>
-            <div class="accordion pt-4" id="faqAccordion">
-
-                <div class="row row-cols-md-2 row-cols-1 g-4">
-                    <div class="col-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingOne">
-                                <button class="accordion-button bg-primary text-white" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#faqone" aria-expanded="true"
-                                    aria-controls="faqone">
-                                    What is your return policy?
-                                </button>
-                            </h3>
-                            <div id="faqone" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                                data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <strong>Our return policy allows you to return items within 30 days of purchase for
-                                        a full refund.</strong>
+                <div class="accordion" id="faqAccordion">
+                    <div class="row row-cols-1 row-cols-md-2 g-3 align-items-start">
+                        <div class="col" data-aos="fade-up">
+                            <div class="accordion-item">
+                                <h3 class="accordion-header m-0" id="faqHead1">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                                        How do I submit a report?
+                                    </button>
+                                </h3>
+                                <div id="faq1" class="accordion-collapse collapse show" aria-labelledby="faqHead1"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">Press "Let's Start", pick a category, describe the issue, and send it. You will see it listed under Recent Reports.</div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingOne">
-                                <button class="accordion-button bg-primary text-white" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#faqtwo" aria-expanded="true"
-                                    aria-controls="faqtwo">
-                                    What is your return policy?
-                                </button>
-                            </h3>
-                            <div id="faqtwo" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                                data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <strong>Our return policy allows you to return items within 30 days of purchase for
-                                        a full refund.</strong>
+                        <div class="col" data-aos="fade-up" data-aos-delay="100">
+                            <div class="accordion-item">
+                                <h3 class="accordion-header m-0" id="faqHead2">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                                        Can I report anonymously?
+                                    </button>
+                                </h3>
+                                <div id="faq2" class="accordion-collapse collapse" aria-labelledby="faqHead2"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">Yes. Use Anonymous Services and your name will not be shown on the report.</div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingOne">
-                                <button class="accordion-button bg-primary text-white" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="true"
-                                    aria-controls="faq3">
-                                    What is your return policy?
-                                </button>
-                            </h3>
-                            <div id="faq3" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                                data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <strong>Our return policy allows you to return items within 30 days of purchase for
-                                        a full refund.</strong>
+                        <div class="col" data-aos="fade-up">
+                            <div class="accordion-item">
+                                <h3 class="accordion-header m-0" id="faqHead3">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                                        What kinds of reports can I send?
+                                    </button>
+                                </h3>
+                                <div id="faq3" class="accordion-collapse collapse" aria-labelledby="faqHead3"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">Academic matters, facility problems, and other non-academic concerns.</div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingOne">
-                                <button class="accordion-button bg-primary text-white" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#faqo4" aria-expanded="true"
-                                    aria-controls="faqo4">
-                                    What is your return policy?
-                                </button>
-                            </h3>
-                            <div id="faqo4" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                                data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <strong>Our return policy allows you to return items within 30 days of purchase for
-                                        a full refund.</strong>
+                        <div class="col" data-aos="fade-up" data-aos-delay="100">
+                            <div class="accordion-item">
+                                <h3 class="accordion-header m-0" id="faqHead4">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                                        How long until my report is handled?
+                                    </button>
+                                </h3>
+                                <div id="faq4" class="accordion-collapse collapse" aria-labelledby="faqHead4"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">Handling time depends on the type and urgency of the report. You can follow its status on the report detail page.</div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingOne">
-                                <button class="accordion-button bg-primary text-white" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="true"
-                                    aria-controls="faq5">
-                                    What is your return policy?
-                                </button>
-                            </h3>
-                            <div id="faq5" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                                data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <strong>Our return policy allows you to return items within 30 days of purchase for
-                                        a full refund.</strong>
+                        <div class="col" data-aos="fade-up">
+                            <div class="accordion-item">
+                                <h3 class="accordion-header m-0" id="faqHead5">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">
+                                        Can I see other people's reports?
+                                    </button>
+                                </h3>
+                                <div id="faq5" class="accordion-collapse collapse" aria-labelledby="faqHead5"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">Yes, open the All Reports page to search and filter reports by category.</div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-6" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingOne">
-                                <button class="accordion-button bg-primary text-white" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="true"
-                                    aria-controls="faq6">
-                                    What is your return policy?
-                                </button>
-                            </h3>
-                            <div id="faq6" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                                data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <strong>Our return policy allows you to return items within 30 days of purchase for
-                                        a full refund.</strong>
+                        <div class="col" data-aos="fade-up" data-aos-delay="100">
+                            <div class="accordion-item">
+                                <h3 class="accordion-header m-0" id="faqHead6">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6">
+                                        Who do I contact for help?
+                                    </button>
+                                </h3>
+                                <div id="faq6" class="accordion-collapse collapse" aria-labelledby="faqHead6"
+                                    data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">Email or WhatsApp us using the contact details in the footer below.</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- footer -->
-    <footer class="bg-primary">
+    <footer class="site-footer">
         <div class="container">
-            <div class="row justify-content-between  row-gap-4 py-5 ">
+            <div class="row justify-content-between row-gap-4 py-5">
 
-                <div class="col text-white">
-                    <div class="d-flex align-items-center gap-2 mb-2">
-                        <img src="assets/image/idn ori.webp" alt="Logo" width="30px"
-                            class="d-inline-block align-text-top rounded" >
-                        <h2 class="fw-bold m-0">E-reports</h2>
+                <div class="col-lg-4">
+                    <div class="footer-brand d-flex align-items-center gap-2 mb-3">
+                        <img src="assets/image/idn ori.webp" alt="Logo IDN" class="rounded">
+                        <h2 class="fw-bold m-0">E-Reports</h2>
                     </div>
-                    <p class="lh-lg opacity-75 m-0 text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        Officia,
-                        repellendus!</p>
+                    <p class="lh-lg opacity-75 m-0">Platform pelaporan online untuk warga sekolah: cepat, aman, dan transparan.</p>
                 </div>
 
-                <div class="col d-flex flex-column gap-2 text-center">
-                    <h4 class="fw-bold text-white">Menu</h4>
-                    <a href="#hero" class="footer-link text-white text-decoration-none">home</a>
-                    <a href="#about" class="footer-link text-white text-decoration-none">about</a>
-                    <a href="#services" class="footer-link text-white text-decoration-none">services</a>
-                    <a href="#recent" class="footer-link text-white text-decoration-none">recent</a>
+                <div class="col-12 col-sm-6 col-lg-3 d-flex flex-column gap-2">
+                    <h4>Menu</h4>
+                    <a href="#hero" class="footer-link text-white text-decoration-none">Home</a>
+                    <a href="#about" class="footer-link text-white text-decoration-none">About</a>
+                    <a href="#services" class="footer-link text-white text-decoration-none">Services</a>
+                    <a href="#recent" class="footer-link text-white text-decoration-none">Recent</a>
                     <a href="#faq" class="footer-link text-white text-decoration-none">FAQ</a>
+                    <a href="panduan.html" class="footer-link text-white text-decoration-none">Guide</a>
                 </div>
 
-                <div class="col d-flex flex-column  gap-2 text-white text-center text-md-start">
-                    <h4 class="fw-bold ">Contact Us</h4>
+                <div class="col-12 col-sm-6 col-lg-4 contact-list d-flex flex-column gap-2">
+                    <h4>Contact Us</h4>
                     <p class="m-0 d-flex align-items-center gap-2">
                         <i class="fas fa-envelope"></i>
                         donellyabdll@idn.sch.id
                     </p>
-                    <p class="m-0 d-flex align-items-center gap-2">
-                        <a href="https://wa.me/6285199683299" target="_blank" class="text-white text-decoration-none">
+                    <p class="m-0">
+                        <a href="https://wa.me/6285199683299" target="_blank" rel="noopener"
+                            class="text-white text-decoration-none d-flex align-items-center gap-2">
                             <i class="fab fa-whatsapp"></i>
                             WhatsApp
                         </a>
-                    </p> 
+                    </p>
                     <p class="m-0 d-flex align-items-center gap-2">
                         <i class="fas fa-map-marker-alt"></i>
-                        Jalan Raya Serang , Cikande
-
+                        Jalan Raya Serang, Cikande
                     </p>
                 </div>
             </div>
 
-            <div class="copyright text-center text-white">
-                <p>&copy; Copyright by <span class="fw-bold">RPL-C class</span>2026, All Rights Reserved</p>
-
+            <div class="copyright text-center">
+                <p>&copy; Copyright by <span class="fw-bold">RPL-C class</span> 2026, All Rights Reserved</p>
             </div>
         </div>
-
-
     </footer>
-
-
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -402,7 +491,11 @@
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            once: true,
+            duration: 700,
+            disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        });
     </script>
 </body>
 

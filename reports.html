@@ -1,11 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Others Reports</title>
+    <title>All Reports | E-Report</title>
     <link rel="shortcut icon" href="./assets/image/idn logo.jpg" type="image/x-icon">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -25,18 +30,157 @@
     <!-- cdn AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <!-- tema tampilan (dimuat terakhir agar menimpa style bawaan) -->
+    <style>
+:root {
+    --ink: #14213d;
+    --blue: #2352e6;
+    --blue-dark: #1b41bd;
+    --blue-soft: #eaf0ff;
+    --paper: #f5f7fc;
+    --line: #e1e6f1;
+    --muted: #5a6784;
+    --amber: #f4b000;
 
+    --bs-primary: #2352e6;
+    --bs-primary-rgb: 35, 82, 230;
+    --bs-primary-bg-subtle: #eaf0ff;
+    --bs-primary-border-subtle: #c9d7fb;
+    --bs-primary-text-emphasis: #14213d;
+    --bs-link-color-rgb: 35, 82, 230;
+    --bs-link-hover-color-rgb: 27, 65, 189;
+    --bs-body-font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --bs-body-color: #26324f;
+    --bs-body-bg: #ffffff;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--bs-body-font-family); color: var(--bs-body-color); -webkit-font-smoothing: antialiased; }
+section[id] { scroll-margin-top: 76px; }
+
+h1, h2, h3, h4, h5 { color: var(--ink); letter-spacing: -0.02em; font-weight: 700; }
+p { max-width: 65ch; }
+.text-center p, .text-end p { margin-left: auto; margin-right: auto; }
+.text-end p { margin-right: 0; }
+
+:focus-visible { outline: 3px solid rgba(35, 82, 230, .45); outline-offset: 2px; border-radius: 6px; }
+
+/* ---------- buttons ---------- */
+.btn { font-weight: 600; border-radius: 999px; padding: .65rem 1.4rem; transition: background-color .15s, color .15s, border-color .15s; }
+.btn-primary { --bs-btn-bg: var(--blue); --bs-btn-border-color: var(--blue); --bs-btn-hover-bg: var(--blue-dark); --bs-btn-hover-border-color: var(--blue-dark); --bs-btn-active-bg: var(--blue-dark); --bs-btn-active-border-color: var(--blue-dark); --bs-btn-focus-shadow-rgb: 35, 82, 230; }
+.btn-outline-primary { --bs-btn-color: var(--blue); --bs-btn-border-color: #b9c9f7; --bs-btn-hover-bg: var(--blue-soft); --bs-btn-hover-color: var(--blue-dark); --bs-btn-hover-border-color: var(--blue); --bs-btn-active-bg: var(--blue-soft); --bs-btn-active-color: var(--blue-dark); }
+.btn-sm { padding: .45rem 1rem; }
+
+/* ---------- navbar ---------- */
+.navbar { background: rgba(255, 255, 255, .92) !important; backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); padding: .85rem 0 !important; }
+.navbar-brand img { width: 34px; height: 34px; object-fit: cover; }
+.navbar-brand span { color: var(--ink) !important; font-weight: 800 !important; letter-spacing: -0.02em; }
+.navbar .nav-link { color: var(--muted) !important; font-weight: 600 !important; padding: .5rem .15rem; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; }
+.navbar .nav-link:hover { color: var(--ink) !important; }
+.navbar .nav-link.active { color: var(--blue) !important; border-bottom-color: var(--blue); }
+@media (max-width: 991.98px) {
+    .navbar-nav { padding-bottom: .75rem; gap: .25rem !important; }
+    .navbar .nav-link { display: inline-block; }
+}
+
+/* ---------- section rhythm ---------- */
+.section-pad { padding: 5rem 0; }
+.section-alt { background: var(--paper); }
+.section-head { margin-bottom: 2.5rem; }
+.section-head h1, .section-head h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); margin-bottom: .75rem; color: var(--ink) !important; }
+.section-head p { color: var(--muted); line-height: 1.8; margin-bottom: 0; }
+
+/* ---------- hero ---------- */
+.hero-section { background: var(--paper); padding: 4.5rem 0 5rem; overflow: hidden; }
+.hero-section h1 { font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.15; letter-spacing: -0.03em; font-weight: 800; }
+.hero-section h1 .brand-name { color: var(--blue) !important; display: block; }
+.hero-section p { color: var(--muted); font-size: 1.05rem; max-width: 52ch; }
+.hero-art { background: #fff; border: 1px solid var(--line); border-radius: 1.75rem; padding: 2rem; }
+.hero-art img { width: 100%; height: auto; max-height: 400px; object-fit: contain; }
+
+/* ---------- about ---------- */
+.about-art { max-width: 520px; width: 100%; height: auto; }
+
+/* ---------- services ---------- */
+.service-card { background: #fff; border: 1px solid var(--line); border-radius: 1.25rem; padding: 2rem; height: 100%; transition: border-color .2s; }
+.service-card:hover { border-color: var(--blue); }
+.service-icon { width: 52px; height: 52px; border-radius: 14px; display: inline-flex; align-items: center; justify-content: center; background: var(--blue-soft); color: var(--blue); font-size: 1.25rem; margin-bottom: 1.25rem; }
+.service-card h4 { font-size: 1.15rem; margin-bottom: .5rem; }
+.service-card p { color: var(--muted); margin: 0; line-height: 1.7; }
+
+/* ---------- report cards ---------- */
+.report-card { background: #fff; border: 1px solid var(--line); border-radius: 1.25rem; overflow: hidden; height: 100%; display: flex; flex-direction: column; transition: border-color .2s, transform .2s; }
+.report-card:hover { border-color: var(--blue); transform: translateY(-3px); }
+.report-thumb { position: relative; }
+.report-thumb img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+.chip { position: absolute; top: .85rem; left: .85rem; background: #fff; color: var(--ink); font-size: .8rem; font-weight: 700; padding: .3rem .8rem; border-radius: 999px; display: inline-flex; align-items: center; gap: .4rem; margin: 0; }
+.chip::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); }
+.report-body { padding: 1.4rem 1.5rem 1.6rem; display: flex; flex-direction: column; flex: 1; }
+.report-body h5 { font-size: 1.15rem; margin-bottom: .5rem; text-align: left !important; }
+.report-meta { color: var(--muted); font-size: .85rem; margin-bottom: 1rem !important; }
+.report-meta a { color: var(--blue); font-weight: 600; text-decoration: none; }
+.report-meta a:hover { text-decoration: underline !important; }
+.report-body .card-text { color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+.report-body .btn { margin-top: auto; align-self: flex-start; }
+
+/* ---------- faq ---------- */
+#faqAccordion { --bs-accordion-active-bg: var(--blue-soft); --bs-accordion-active-color: var(--blue-dark); --bs-accordion-btn-focus-box-shadow: 0 0 0 3px rgba(35, 82, 230, .25); }
+#faqAccordion .accordion-item { border: 1px solid var(--line) !important; border-radius: 1rem !important; overflow: hidden; background: #fff; }
+#faqAccordion .accordion-button { background: #fff; color: var(--ink); font-weight: 700; padding: 1.15rem 1.35rem; border-radius: 0 !important; box-shadow: none; }
+#faqAccordion .accordion-button:not(.collapsed) { background: var(--blue-soft); color: var(--blue-dark); }
+#faqAccordion .accordion-body { color: var(--muted); line-height: 1.75; padding: 1.1rem 1.35rem 1.35rem; }
+
+/* ---------- footer ---------- */
+footer.site-footer { background: var(--ink) !important; color: #fff; }
+footer.site-footer h2 { font-size: 1.4rem; color: #fff; }
+footer.site-footer h4 { font-size: 1rem; color: #fff; margin-bottom: .75rem; }
+footer.site-footer .footer-link { opacity: .75; transition: opacity .15s; }
+footer.site-footer .footer-link:hover { opacity: 1; text-decoration: underline !important; }
+footer.site-footer .copyright { border-top: 1px solid rgba(255, 255, 255, .15); padding: 1.25rem 0; font-size: .9rem; opacity: .8; }
+footer.site-footer .copyright p { margin: 0 auto; }
+footer.site-footer .footer-brand img { width: 34px; height: 34px; object-fit: cover; }
+.contact-list p { opacity: .85; }
+.contact-list i { width: 1.25rem; text-align: center; }
+
+/* ---------- reports page ---------- */
+.page-head { background: var(--paper); border-bottom: 1px solid var(--line); padding: 3.5rem 0 3rem; }
+.page-head h1 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; }
+.page-head p { color: var(--muted); line-height: 1.8; margin-bottom: 0; }
+.crumbs { font-size: .9rem; margin-bottom: 1rem; color: var(--muted); }
+.crumbs a { color: var(--blue); text-decoration: none; font-weight: 600; }
+.crumbs a:hover { text-decoration: underline; }
+.toolbar { background: #fff; border: 1px solid var(--line); border-radius: 1.25rem; padding: 1rem; margin-top: -1.75rem; position: relative; box-shadow: 0 10px 30px rgba(20, 33, 61, .06); }
+.toolbar .form-control, .toolbar .form-select { border-radius: .8rem; border-color: var(--line); padding: .7rem 1rem; box-shadow: none !important; }
+.toolbar .form-control:focus, .toolbar .form-select:focus { border-color: var(--blue); }
+.toolbar .btn { border-radius: .8rem; }
+.search-wrap { position: relative; }
+.search-wrap i { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+.search-wrap .form-control { padding-left: 2.6rem; }
+.result-count { color: var(--muted); font-size: .95rem; }
+.empty-state { text-align: center; padding: 4rem 1rem; border: 1px dashed #c3cde6; border-radius: 1.25rem; color: var(--muted); }
+.empty-state i { font-size: 2rem; color: var(--blue); margin-bottom: 1rem; }
+.empty-state h5 { color: var(--ink); }
+.empty-state p { margin: 0 auto; }
+.pagination { --bs-pagination-color: var(--ink); --bs-pagination-hover-color: var(--blue-dark); --bs-pagination-hover-bg: var(--blue-soft); --bs-pagination-active-bg: var(--blue); --bs-pagination-active-border-color: var(--blue); --bs-pagination-focus-box-shadow: 0 0 0 3px rgba(35, 82, 230, .25); gap: .35rem; }
+.pagination .page-link { border-radius: .7rem !important; border-color: var(--line); font-weight: 600; min-width: 2.5rem; text-align: center; }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .animate__animated { animation: none !important; }
+    .report-card, .service-card, .btn { transition: none; }
+    .report-card:hover { transform: none; }
+}
+    </style>
 </head>
 
 <body>
 
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg bg-info-subtle py-4 animate__animated animate__fadeInDown">
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                <img src="./assets/image/idn orian.png" alt="Logo" width="30"
-                    class="d-inline-block align-text-top rounded">
-                <span class="fw-bold text-primary-emphasis">IDN E-Report</span>
+                <img src="./assets/image/idn orian.png" alt="Logo IDN" class="rounded">
+                <span>IDN E-Report</span>
             </a>
 
             <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse"
@@ -45,298 +189,321 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto gap-4 pt-4 pt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold text-primary" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold text-primary" href="index.html#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a target="_blank" class="nav-link fw-bold text-primary"
-                            href="https://www.instagram.com/donellyabdll/">Instagram</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold text-primary" href="index.html#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold text-primary" href="index.html#recent">Recent</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link fw-bold text-primary" href="index.html#faq">F.A.Q</a>
-                    </li>
+                <ul class="navbar-nav ms-auto gap-lg-4 pt-3 pt-lg-0 align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="reports.html">Reports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#faq">F.A.Q</a></li>
+                    <li class="nav-item"><a class="nav-link" href="panduan.html">Guide</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- reports -->
-    <section id="reports" class="py-5">
-        <div class="container">
-
-            <!-- header -->
-            <div class="mb-4 text-center">
-                <h1 class="fw-bold text-primary-emphasis" data-aos="fade-up" data-aos-duration="1000">All Reports</h1>
-                <p class="lh-lg text-muted" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat aperiam officia iusto ipsa nam
-                    possimus similique perferendis maxime assumenda earum!</p>
-            </div>
-
-            <!-- filter & search -->
-            <div class="row mt-5 gap-3 gap-md-0">
-                <div class="col-md-4">
-                    <input type="text" class="form-control shadow-lg" placeholder="Search..">
-                </div>
-                <div class="col-md-3">
-                    <select class="form-select shadow-lg">
-                        <option selected>Classify</option>
-                        <option value="fasilitas">Facilities</option>
-                        <option value="2">non-academic</option>
-                    </select>
-                </div>
-                <div class="col-md-3">
-                    <select class="form-select shadow-lg">
-                        <option selected>Choose</option>
-                        <option value="newest">Newest Reports</option>
-                        <option value="oldest">Oldest Reports</option>
-                        <option value="popular">Top Reports</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <button class="btn btn-primary w-100 shadow-lg">
-                        <i class="fa-solid fa-filter"></i>
-                        Filter
-                    </button>
-                </div>
-
-            </div>
-
-            <!-- all reports -->
-            <div class="row mb-4 mt-5">
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <p style="background-color: rgba(0, 0, 0, 0.3);" class="position-absolute text-light px-3 py-2">
-                            Academic</p>
-                        <img style="height: 235px; object-fit: cover;" src="./assets/image/kelas.png"
-                            class="card-img-top" alt="Kelas">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Kelas</h5>
-                            <p class="mb-4">By: <a class="text-decoration-none" href="">John Dounaily.</a> 1 day ago</p>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                            <a href="#" class="btn btn-primary">Details..</a>
-                        </div>
+    <main>
+        <!-- page header -->
+        <header class="page-head">
+            <div class="container">
+                <p class="crumbs mb-3"><a href="index.html">Home</a> &nbsp;/&nbsp; All Reports</p>
+                <div class="d-flex flex-column flex-md-row align-items-center justify-content-between pb-3">
+                    <div class="col-md-8 text-center text-md-start">
+                        <h1 class="mb-3" data-aos="fade-up">All Reports</h1>
+                        <p data-aos="fade-up" data-aos-delay="100">Telusuri semua laporan dari warga sekolah. Gunakan pencarian dan filter untuk menemukan laporan tertentu.</p>
                     </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <p style="background-color: rgba(0, 0, 0, 0.3);" class="position-absolute text-light px-3 py-2">
-                            Academic</p>
-                        <img style="height: 235px; object-fit: cover;" src="./assets/image/bob.png" class="card-img-top"
-                            alt="Kelas">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Anak ilang </h5>
-                            <p class="mb-4">By: <a class="text-decoration-none" href="">John Dounaily.</a> 2 day ago</p>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                            <a href="#" class="btn btn-primary">Details..</a>
-                        </div>
+                    <div class="col-md-2 mt-3">
+                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="fa-solid fa-plus me-2"></i> Tambah
+                        </button>
                     </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <p style="background-color: rgba(0, 0, 0, 0.3);" class="position-absolute text-light px-3 py-2">
-                            Academic</p>
-                        <img style="height: 235px; object-fit: cover;" src="./assets/image/banten.png"
-                            class="card-img-top" alt="Kelas">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Tsunami banten</h5>
-                            <p class="mb-4">By: <a class="text-decoration-none" href="">John Dounaily.</a> 4 day ago</p>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                            <a href="#" class="btn btn-primary">Details..</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <p style="background-color: rgba(0, 0, 0, 0.3);" class="position-absolute text-light px-3 py-2">
-                            Academic</p>
-                        <img style="height: 235px; object-fit: cover;" src="./assets/image/kelas.png"
-                            class="card-img-top" alt="Kelas">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Kelas</h5>
-                            <p class="mb-4">By: <a class="text-decoration-none" href="">John Dounaily.</a> 1 day ago</p>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                            <a href="#" class="btn btn-primary">Details..</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <p style="background-color: rgba(0, 0, 0, 0.3);" class="position-absolute text-light px-3 py-2">
-                            Academic</p>
-                        <img style="height: 235px; object-fit: cover;" src="./assets/image/bob.png" class="card-img-top"
-                            alt="Kelas">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Anak ilang </h5>
-                            <p class="mb-4">By: <a class="text-decoration-none" href="">John Dounaily.</a> 2 day ago</p>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                            <a href="#" class="btn btn-primary">Details..</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <p style="background-color: rgba(0, 0, 0, 0.3);" class="position-absolute text-light px-3 py-2">
-                            Academic</p>
-                        <img style="height: 235px; object-fit: cover;" src="./assets/image/banten.png"
-                            class="card-img-top" alt="Kelas">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Tsunami banten</h5>
-                            <p class="mb-4">By: <a class="text-decoration-none" href="">John Dounaily.</a> 4 day ago</p>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                            <a href="#" class="btn btn-primary">Details..</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <p style="background-color: rgba(0, 0, 0, 0.3);" class="position-absolute text-light px-3 py-2">
-                            Academic</p>
-                        <img style="height: 235px; object-fit: cover;" src="./assets/image/kelas.png"
-                            class="card-img-top" alt="Kelas">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Kelas</h5>
-                            <p class="mb-4">By: <a class="text-decoration-none" href="">John Dounaily.</a> 1 day ago</p>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                            <a href="#" class="btn btn-primary">Details..</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <p style="background-color: rgba(0, 0, 0, 0.3);" class="position-absolute text-light px-3 py-2">
-                            Academic</p>
-                        <img style="height: 235px; object-fit: cover;" src="./assets/image/bob.png" class="card-img-top"
-                            alt="Kelas">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Anak ilang </h5>
-                            <p class="mb-4">By: <a class="text-decoration-none" href="">John Dounaily.</a> 2 day ago</p>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                            <a href="#" class="btn btn-primary">Details..</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
-                    <div class="card">
-                        <p style="background-color: rgba(0, 0, 0, 0.3);" class="position-absolute text-light px-3 py-2">
-                            Academic</p>
-                        <img style="height: 235px; object-fit: cover;" src="./assets/image/banten.png"
-                            class="card-img-top" alt="Kelas">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Tsunami banten</h5>
-                            <p class="mb-4">By: <a class="text-decoration-none" href="">John Dounaily.</a> 4 day ago</p>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of
-                                the card's content.</p>
-                            <a href="#" class="btn btn-primary">Details..</a>
-                        </div>
-                    </div>
-
                 </div>
             </div>
+        </header>
 
-            <!-- pagination -->
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+        <!-- reports -->
+        <section id="reports" class="pb-5">
+            <div class="container">
+
+                <!-- filter & search -->
+                <form class="toolbar" id="filterForm" role="search">
+                    <div class="row g-2">
+                        <div class="col-md-5">
+                            <div class="search-wrap">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="search" id="searchInput" class="form-control" placeholder="Search reports" aria-label="Search reports">
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <select class="form-select" id="categorySelect" aria-label="Category">
+                                <option value="all" selected>All categories</option>
+                                <option value="academic">Academic</option>
+                                <option value="facility">Facilities</option>
+                                <option value="non-academic">Non-academic</option>
+                            </select>
+                        </div>
+                        <div class="col-6 col-md-2">
+                            <select class="form-select" id="sortSelect" aria-label="Sort reports">
+                                <option value="default" selected>Sort by</option>
+                                <option value="newest">Newest</option>
+                                <option value="oldest">Oldest</option>
+                                <option value="popular">Top reports</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-primary w-100 py-2">
+                                <i class="fa-solid fa-filter me-1"></i> Filter
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <p class="result-count mt-4 mb-3" id="resultCount" aria-live="polite"></p>
+
+                <!-- all reports -->
+                <div class="row g-4 mb-5" id="reportGrid">
+                    <div class="col-12 col-md-6 col-lg-4" data-category="academic" data-days="1">
+                        <article class="report-card">
+                            <div class="report-thumb">
+                                <p class="chip">Academic</p>
+                                <img src="./assets/image/kelas.png" alt="Ruang kelas" loading="lazy">
+                            </div>
+                            <div class="report-body">
+                                <h5>Kelas</h5>
+                                <p class="report-meta">By <a href="#">John Dounaily</a> &nbsp;|&nbsp; 1 day ago</p>
+                                <p class="card-text">Kondisi ruang kelas dinilai kurang nyaman untuk belajar. Pelapor berharap pihak sekolah segera melakukan pengecekan dan perbaikan.</p>
+                                <a href="#" class="btn btn-primary btn-sm">View details</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4" data-category="academic" data-days="2">
+                        <article class="report-card">
+                            <div class="report-thumb">
+                                <p class="chip">Academic</p>
+                                <img src="./assets/image/bob.png" alt="Anak hilang" loading="lazy">
+                            </div>
+                            <div class="report-body">
+                                <h5>Anak ilang</h5>
+                                <p class="report-meta">By <a href="#">John Dounaily</a> &nbsp;|&nbsp; 2 days ago</p>
+                                <p class="card-text">Seorang siswa dilaporkan belum kembali ke asrama sejak sore hari. Pelapor meminta informasi dari seluruh warga sekolah.</p>
+                                <a href="#" class="btn btn-primary btn-sm">View details</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4" data-category="academic" data-days="4">
+                        <article class="report-card">
+                            <div class="report-thumb">
+                                <p class="chip">Academic</p>
+                                <img src="./assets/image/banten.png" alt="Tsunami Banten" loading="lazy">
+                            </div>
+                            <div class="report-body">
+                                <h5>Tsunami banten</h5>
+                                <p class="report-meta">By <a href="#">John Dounaily</a> &nbsp;|&nbsp; 4 days ago</p>
+                                <p class="card-text">Informasi kondisi pesisir Banten yang perlu diwaspadai. Pelapor meminta arahan dan langkah antisipasi dari pihak berwenang.</p>
+                                <a href="#" class="btn btn-primary btn-sm">View details</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4" data-category="academic" data-days="1">
+                        <article class="report-card">
+                            <div class="report-thumb">
+                                <p class="chip">Academic</p>
+                                <img src="./assets/image/kelas.png" alt="Ruang kelas" loading="lazy">
+                            </div>
+                            <div class="report-body">
+                                <h5>Kelas</h5>
+                                <p class="report-meta">By <a href="#">John Dounaily</a> &nbsp;|&nbsp; 1 day ago</p>
+                                <p class="card-text">Kondisi ruang kelas dinilai kurang nyaman untuk belajar. Pelapor berharap pihak sekolah segera melakukan pengecekan dan perbaikan.</p>
+                                <a href="#" class="btn btn-primary btn-sm">View details</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4" data-category="academic" data-days="2">
+                        <article class="report-card">
+                            <div class="report-thumb">
+                                <p class="chip">Academic</p>
+                                <img src="./assets/image/bob.png" alt="Anak hilang" loading="lazy">
+                            </div>
+                            <div class="report-body">
+                                <h5>Anak ilang</h5>
+                                <p class="report-meta">By <a href="#">John Dounaily</a> &nbsp;|&nbsp; 2 days ago</p>
+                                <p class="card-text">Seorang siswa dilaporkan belum kembali ke asrama sejak sore hari. Pelapor meminta informasi dari seluruh warga sekolah.</p>
+                                <a href="#" class="btn btn-primary btn-sm">View details</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4" data-category="academic" data-days="4">
+                        <article class="report-card">
+                            <div class="report-thumb">
+                                <p class="chip">Academic</p>
+                                <img src="./assets/image/banten.png" alt="Tsunami Banten" loading="lazy">
+                            </div>
+                            <div class="report-body">
+                                <h5>Tsunami banten</h5>
+                                <p class="report-meta">By <a href="#">John Dounaily</a> &nbsp;|&nbsp; 4 days ago</p>
+                                <p class="card-text">Informasi kondisi pesisir Banten yang perlu diwaspadai. Pelapor meminta arahan dan langkah antisipasi dari pihak berwenang.</p>
+                                <a href="#" class="btn btn-primary btn-sm">View details</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4" data-category="academic" data-days="1">
+                        <article class="report-card">
+                            <div class="report-thumb">
+                                <p class="chip">Academic</p>
+                                <img src="./assets/image/kelas.png" alt="Ruang kelas" loading="lazy">
+                            </div>
+                            <div class="report-body">
+                                <h5>Kelas</h5>
+                                <p class="report-meta">By <a href="#">John Dounaily</a> &nbsp;|&nbsp; 1 day ago</p>
+                                <p class="card-text">Kondisi ruang kelas dinilai kurang nyaman untuk belajar. Pelapor berharap pihak sekolah segera melakukan pengecekan dan perbaikan.</p>
+                                <a href="#" class="btn btn-primary btn-sm">View details</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4" data-category="academic" data-days="2">
+                        <article class="report-card">
+                            <div class="report-thumb">
+                                <p class="chip">Academic</p>
+                                <img src="./assets/image/bob.png" alt="Anak hilang" loading="lazy">
+                            </div>
+                            <div class="report-body">
+                                <h5>Anak ilang</h5>
+                                <p class="report-meta">By <a href="#">John Dounaily</a> &nbsp;|&nbsp; 2 days ago</p>
+                                <p class="card-text">Seorang siswa dilaporkan belum kembali ke asrama sejak sore hari. Pelapor meminta informasi dari seluruh warga sekolah.</p>
+                                <a href="#" class="btn btn-primary btn-sm">View details</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4" data-category="academic" data-days="4">
+                        <article class="report-card">
+                            <div class="report-thumb">
+                                <p class="chip">Academic</p>
+                                <img src="./assets/image/banten.png" alt="Tsunami Banten" loading="lazy">
+                            </div>
+                            <div class="report-body">
+                                <h5>Tsunami banten</h5>
+                                <p class="report-meta">By <a href="#">John Dounaily</a> &nbsp;|&nbsp; 4 days ago</p>
+                                <p class="card-text">Informasi kondisi pesisir Banten yang perlu diwaspadai. Pelapor meminta arahan dan langkah antisipasi dari pihak berwenang.</p>
+                                <a href="#" class="btn btn-primary btn-sm">View details</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="empty-state d-none mb-5" id="emptyState">
+                    <i class="fa-regular fa-folder-open"></i>
+                    <h5>No reports found</h5>
+                    <p>Try a different keyword or choose another category.</p>
+                </div>
+
+                <!-- pagination -->
+                <nav aria-label="Report pages">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+                        </li>
+                        <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+        <!-- modal add -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary text-white">
+                        <h1 class="modal-title fs-5 fw-semibold text-white" id="exampleModalLabel">
+                            <i class="fa-solid fa-pen-to-square me-2"></i> Form Tambah Laporan
+                        </h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form action="">
+                        <div style="padding: 3rem;" class="modal-body">
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold" for="">Judul Laporan:</label>
+                                <input class="form-control shadow-sm" type="text" placeholder="Tulis judul laporan...">
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold" for="">Pilih Kategori:</label>
+                                <select class="form-select shadow-sm">
+                                    <option value="">Pilih kategori...</option>
+                                    <option value="akademik">Akademik</option>
+                                    <option value="fasilitis">Fasilitas</option>
+                                    <option value="anonymous">Anonymous</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold" for="">Isi Laporan:</label>
+                                <textarea rows="6" class="form-control shadow-sm" placeholder="Tulis isi laporan..."></textarea>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold" for="">Uploud Gambar:</label>
+                                <input type="file" class="form-control" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Kirim</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-    </section>
-
+        </main>
 
     <!-- footer -->
-    <footer class="bg-primary">
+    <footer class="site-footer">
         <div class="container">
-            <div class="row justify-content-between  row-gap-4 py-5 ">
+            <div class="row justify-content-between row-gap-4 py-5">
 
-                <div class="col text-white">
-                    <div class="d-flex align-items-center gap-2 mb-2">
-                        <img src="assets/image/idn ori.webp" alt="Logo" width="30px"
-                            class="d-inline-block align-text-top rounded">
-                        <h2 class="fw-bold m-0">E-reports</h2>
+                <div class="col-lg-4">
+                    <div class="footer-brand d-flex align-items-center gap-2 mb-3">
+                        <img src="assets/image/idn ori.webp" alt="Logo IDN" class="rounded">
+                        <h2 class="fw-bold m-0">E-Reports</h2>
                     </div>
-                    <p class="lh-lg opacity-75 m-0 text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                        Officia,
-                        repellendus!</p>
+                    <p class="lh-lg opacity-75 m-0">Platform pelaporan online untuk warga sekolah: cepat, aman, dan transparan.</p>
                 </div>
 
-                <div class="col d-flex flex-column gap-2 text-center">
-                    <h4 class="fw-bold text-white">Menu</h4>
-                    <a href="index.html" class="footer-link text-white text-decoration-none">home</a>
-                    <a href="index.html#about" class="footer-link text-white text-decoration-none">about</a>
-                    <a href="index.html#services" class="footer-link text-white text-decoration-none">services</a>
-                    <a href="index.html#recent" class="footer-link text-white text-decoration-none">recent</a>
+                <div class="col-12 col-sm-6 col-lg-3 d-flex flex-column gap-2">
+                    <h4>Menu</h4>
+                    <a href="index.html" class="footer-link text-white text-decoration-none">Home</a>
+                    <a href="index.html#about" class="footer-link text-white text-decoration-none">About</a>
+                    <a href="index.html#services" class="footer-link text-white text-decoration-none">Services</a>
+                    <a href="index.html#recent" class="footer-link text-white text-decoration-none">Recent</a>
                     <a href="index.html#faq" class="footer-link text-white text-decoration-none">FAQ</a>
+                    <a href="panduan.html" class="footer-link text-white text-decoration-none">Guide</a>
                 </div>
 
-                <div class="col d-flex flex-column  gap-2 text-white text-center text-md-start">
-                    <h4 class="fw-bold ">Contact Us</h4>
+                <div class="col-12 col-sm-6 col-lg-4 contact-list d-flex flex-column gap-2">
+                    <h4>Contact Us</h4>
                     <p class="m-0 d-flex align-items-center gap-2">
                         <i class="fas fa-envelope"></i>
                         donellyabdll@idn.sch.id
                     </p>
-                    <p class="m-0 d-flex align-items-center gap-2">
-                        <a href="https://wa.me/6285199683299" target="_blank" class="text-white text-decoration-none">
+                    <p class="m-0">
+                        <a href="https://wa.me/6285199683299" target="_blank" rel="noopener"
+                            class="text-white text-decoration-none d-flex align-items-center gap-2">
                             <i class="fab fa-whatsapp"></i>
                             WhatsApp
                         </a>
                     </p>
                     <p class="m-0 d-flex align-items-center gap-2">
                         <i class="fas fa-map-marker-alt"></i>
-                        Jalan Raya Serang , Cikande
-
+                        Jalan Raya Serang, Cikande
                     </p>
                 </div>
             </div>
 
-            <div class="copyright text-center text-white">
-                <p>&copy; Copyright by <span class="fw-bold">RPL-C class</span>2026, All Rights Reserved</p>
-
+            <div class="copyright text-center">
+                <p>&copy; Copyright by <span class="fw-bold">RPL-C class</span> 2026, All Rights Reserved</p>
             </div>
         </div>
-
-
     </footer>
-
-
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -350,7 +517,56 @@
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            once: true,
+            duration: 700,
+            disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        });
+
+        // Search, filter dan urutkan laporan
+        (function () {
+            var grid = document.getElementById('reportGrid');
+            var items = Array.prototype.slice.call(grid.children);
+            var form = document.getElementById('filterForm');
+            var search = document.getElementById('searchInput');
+            var category = document.getElementById('categorySelect');
+            var sort = document.getElementById('sortSelect');
+            var count = document.getElementById('resultCount');
+            var empty = document.getElementById('emptyState');
+
+            items.forEach(function (el, i) { el.dataset.order = i; });
+
+            function apply() {
+                var q = search.value.trim().toLowerCase();
+                var cat = category.value;
+                var visible = [];
+
+                items.forEach(function (el) {
+                    var matchText = !q || el.textContent.toLowerCase().indexOf(q) !== -1;
+                    var matchCat = cat === 'all' || el.dataset.category === cat;
+                    var show = matchText && matchCat;
+                    el.classList.toggle('d-none', !show);
+                    if (show) visible.push(el);
+                });
+
+                var mode = sort.value;
+                var sorted = items.slice().sort(function (a, b) {
+                    if (mode === 'newest') return a.dataset.days - b.dataset.days || a.dataset.order - b.dataset.order;
+                    if (mode === 'oldest') return b.dataset.days - a.dataset.days || a.dataset.order - b.dataset.order;
+                    return a.dataset.order - b.dataset.order;
+                });
+                sorted.forEach(function (el) { grid.appendChild(el); });
+
+                count.textContent = 'Showing ' + visible.length + ' of ' + items.length + ' reports';
+                empty.classList.toggle('d-none', visible.length > 0);
+            }
+
+            form.addEventListener('submit', function (e) { e.preventDefault(); apply(); });
+            search.addEventListener('input', apply);
+            category.addEventListener('change', apply);
+            sort.addEventListener('change', apply);
+            apply();
+        })();
     </script>
 </body>
 

@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laporan keran masjid rusak | E Report IDN</title>
+    <link rel="shortcut icon" href="./assets/images/logo idn.png" type="image/x-icon" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/style.css" />
+
+    <!-- CDN Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- cdn animate style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- cdn aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- tema tampilan (dimuat terakhir agar menimpa style bawaan) -->
+    <style>
+:root {
+    --ink: #14213d;
+    --blue: #2352e6;
+    --blue-dark: #1b41bd;
+    --blue-soft: #eaf0ff;
+    --paper: #f5f7fc;
+    --line: #e1e6f1;
+    --muted: #5a6784;
+    --amber: #f4b000;
+
+    --bs-primary: #2352e6;
+    --bs-primary-rgb: 35, 82, 230;
+    --bs-primary-bg-subtle: #eaf0ff;
+    --bs-primary-border-subtle: #c9d7fb;
+    --bs-primary-text-emphasis: #14213d;
+    --bs-link-color-rgb: 35, 82, 230;
+    --bs-link-hover-color-rgb: 27, 65, 189;
+    --bs-body-font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --bs-body-color: #26324f;
+    --bs-body-bg: #ffffff;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--bs-body-font-family); color: var(--bs-body-color); -webkit-font-smoothing: antialiased; }
+section[id] { scroll-margin-top: 76px; }
+
+h1, h2, h3, h4, h5 { color: var(--ink); letter-spacing: -0.02em; font-weight: 700; }
+p { max-width: 65ch; }
+.text-center p, .text-end p { margin-left: auto; margin-right: auto; }
+.text-end p { margin-right: 0; }
+
+:focus-visible { outline: 3px solid rgba(35, 82, 230, .45); outline-offset: 2px; border-radius: 6px; }
+
+/* ---------- buttons ---------- */
+.btn { font-weight: 600; border-radius: 999px; padding: .65rem 1.4rem; transition: background-color .15s, color .15s, border-color .15s; }
+.btn-primary { --bs-btn-bg: var(--blue); --bs-btn-border-color: var(--blue); --bs-btn-hover-bg: var(--blue-dark); --bs-btn-hover-border-color: var(--blue-dark); --bs-btn-active-bg: var(--blue-dark); --bs-btn-active-border-color: var(--blue-dark); --bs-btn-focus-shadow-rgb: 35, 82, 230; }
+.btn-outline-primary { --bs-btn-color: var(--blue); --bs-btn-border-color: #b9c9f7; --bs-btn-hover-bg: var(--blue-soft); --bs-btn-hover-color: var(--blue-dark); --bs-btn-hover-border-color: var(--blue); --bs-btn-active-bg: var(--blue-soft); --bs-btn-active-color: var(--blue-dark); }
+.btn-sm { padding: .45rem 1rem; }
+
+/* ---------- navbar ---------- */
+.navbar { background: rgba(255, 255, 255, .92) !important; backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); padding: .85rem 0 !important; }
+.navbar-brand img { width: 34px; height: 34px; object-fit: cover; }
+.navbar-brand span { color: var(--ink) !important; font-weight: 800 !important; letter-spacing: -0.02em; }
+.navbar .nav-link { color: var(--muted) !important; font-weight: 600 !important; padding: .5rem .15rem; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; }
+.navbar .nav-link:hover { color: var(--ink) !important; }
+.navbar .nav-link.active { color: var(--blue) !important; border-bottom-color: var(--blue); }
+@media (max-width: 991.98px) {
+    .navbar-nav { padding-bottom: .75rem; gap: .25rem !important; }
+    .navbar .nav-link { display: inline-block; }
+}
+
+/* ---------- section rhythm ---------- */
+.section-pad { padding: 5rem 0; }
+.section-alt { background: var(--paper); }
+.section-head { margin-bottom: 2.5rem; }
+.section-head h1, .section-head h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); margin-bottom: .75rem; color: var(--ink) !important; }
+.section-head p { color: var(--muted); line-height: 1.8; margin-bottom: 0; }
+
+/* ---------- hero ---------- */
+.hero-section { background: var(--paper); padding: 4.5rem 0 5rem; overflow: hidden; }
+.hero-section h1 { font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.15; letter-spacing: -0.03em; font-weight: 800; }
+.hero-section h1 .brand-name { color: var(--blue) !important; display: block; }
+.hero-section p { color: var(--muted); font-size: 1.05rem; max-width: 52ch; }
+.hero-art { background: #fff; border: 1px solid var(--line); border-radius: 1.75rem; padding: 2rem; }
+.hero-art img { width: 100%; height: auto; max-height: 400px; object-fit: contain; }
+
+/* ---------- about ---------- */
+.about-art { max-width: 520px; width: 100%; height: auto; }
+
+/* ---------- services ---------- */
+.service-card { background: #fff; border: 1px solid var(--line); border-radius: 1.25rem; padding: 2rem; height: 100%; transition: border-color .2s; }
+.service-card:hover { border-color: var(--blue); }
+.service-icon { width: 52px; height: 52px; border-radius: 14px; display: inline-flex; align-items: center; justify-content: center; background: var(--blue-soft); color: var(--blue); font-size: 1.25rem; margin-bottom: 1.25rem; }
+.service-card h4 { font-size: 1.15rem; margin-bottom: .5rem; }
+.service-card p { color: var(--muted); margin: 0; line-height: 1.7; }
+
+/* ---------- report cards ---------- */
+.report-card { background: #fff; border: 1px solid var(--line); border-radius: 1.25rem; overflow: hidden; height: 100%; display: flex; flex-direction: column; transition: border-color .2s, transform .2s; }
+.report-card:hover { border-color: var(--blue); transform: translateY(-3px); }
+.report-thumb { position: relative; }
+.report-thumb img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+.chip { position: absolute; top: .85rem; left: .85rem; background: #fff; color: var(--ink); font-size: .8rem; font-weight: 700; padding: .3rem .8rem; border-radius: 999px; display: inline-flex; align-items: center; gap: .4rem; margin: 0; }
+.chip::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); }
+.report-body { padding: 1.4rem 1.5rem 1.6rem; display: flex; flex-direction: column; flex: 1; }
+.report-body h5 { font-size: 1.15rem; margin-bottom: .5rem; text-align: left !important; }
+.report-meta { color: var(--muted); font-size: .85rem; margin-bottom: 1rem !important; }
+.report-meta a { color: var(--blue); font-weight: 600; text-decoration: none; }
+.report-meta a:hover { text-decoration: underline !important; }
+.report-body .card-text { color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+.report-body .btn { margin-top: auto; align-self: flex-start; }
+
+/* ---------- faq ---------- */
+#faqAccordion { --bs-accordion-active-bg: var(--blue-soft); --bs-accordion-active-color: var(--blue-dark); --bs-accordion-btn-focus-box-shadow: 0 0 0 3px rgba(35, 82, 230, .25); }
+#faqAccordion .accordion-item { border: 1px solid var(--line) !important; border-radius: 1rem !important; overflow: hidden; background: #fff; }
+#faqAccordion .accordion-button { background: #fff; color: var(--ink); font-weight: 700; padding: 1.15rem 1.35rem; border-radius: 0 !important; box-shadow: none; }
+#faqAccordion .accordion-button:not(.collapsed) { background: var(--blue-soft); color: var(--blue-dark); }
+#faqAccordion .accordion-body { color: var(--muted); line-height: 1.75; padding: 1.1rem 1.35rem 1.35rem; }
+
+/* ---------- footer ---------- */
+footer.site-footer { background: var(--ink) !important; color: #fff; }
+footer.site-footer h2 { font-size: 1.4rem; color: #fff; }
+footer.site-footer h4 { font-size: 1rem; color: #fff; margin-bottom: .75rem; }
+footer.site-footer .footer-link { opacity: .75; transition: opacity .15s; }
+footer.site-footer .footer-link:hover { opacity: 1; text-decoration: underline !important; }
+footer.site-footer .copyright { border-top: 1px solid rgba(255, 255, 255, .15); padding: 1.25rem 0; font-size: .9rem; opacity: .8; }
+footer.site-footer .copyright p { margin: 0 auto; }
+footer.site-footer .footer-brand img { width: 34px; height: 34px; object-fit: cover; }
+.contact-list p { opacity: .85; }
+.contact-list i { width: 1.25rem; text-align: center; }
+
+/* ---------- reports page ---------- */
+.page-head { background: var(--paper); border-bottom: 1px solid var(--line); padding: 3.5rem 0 3rem; }
+.page-head h1 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; }
+.page-head p { color: var(--muted); line-height: 1.8; margin-bottom: 0; }
+.crumbs { font-size: .9rem; margin-bottom: 1rem; color: var(--muted); }
+.crumbs a { color: var(--blue); text-decoration: none; font-weight: 600; }
+.crumbs a:hover { text-decoration: underline; }
+.toolbar { background: #fff; border: 1px solid var(--line); border-radius: 1.25rem; padding: 1rem; margin-top: -1.75rem; position: relative; box-shadow: 0 10px 30px rgba(20, 33, 61, .06); }
+.toolbar .form-control, .toolbar .form-select { border-radius: .8rem; border-color: var(--line); padding: .7rem 1rem; box-shadow: none !important; }
+.toolbar .form-control:focus, .toolbar .form-select:focus { border-color: var(--blue); }
+.toolbar .btn { border-radius: .8rem; }
+.search-wrap { position: relative; }
+.search-wrap i { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+.search-wrap .form-control { padding-left: 2.6rem; }
+.result-count { color: var(--muted); font-size: .95rem; }
+.empty-state { text-align: center; padding: 4rem 1rem; border: 1px dashed #c3cde6; border-radius: 1.25rem; color: var(--muted); }
+.empty-state i { font-size: 2rem; color: var(--blue); margin-bottom: 1rem; }
+.empty-state h5 { color: var(--ink); }
+.empty-state p { margin: 0 auto; }
+.pagination { --bs-pagination-color: var(--ink); --bs-pagination-hover-color: var(--blue-dark); --bs-pagination-hover-bg: var(--blue-soft); --bs-pagination-active-bg: var(--blue); --bs-pagination-active-border-color: var(--blue); --bs-pagination-focus-box-shadow: 0 0 0 3px rgba(35, 82, 230, .25); gap: .35rem; }
+.pagination .page-link { border-radius: .7rem !important; border-color: var(--line); font-weight: 600; min-width: 2.5rem; text-align: center; }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .animate__animated { animation: none !important; }
+    .report-card, .service-card, .btn { transition: none; }
+    .report-card:hover { transform: none; }
+}
+
+/* ---------- detail laporan ---------- */
+.crumbs-wrap { padding: 1.5rem 0 0; }
+.breadcrumb { margin: 0; font-size: .9rem; --bs-breadcrumb-divider-color: var(--muted); }
+.breadcrumb a { color: var(--blue); text-decoration: none; font-weight: 600; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb-item.active { color: var(--muted); }
+.status-chip { display: inline-flex; align-items: center; gap: .5rem; background: #fff6dc; color: #7a5600; font-weight: 700; font-size: .85rem; padding: .35rem .9rem; border-radius: 999px; margin-bottom: 1rem; }
+.status-chip::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); }
+.article h1 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+.byline { display: flex; align-items: center; gap: .75rem; color: var(--muted); font-size: .92rem; margin-bottom: 1.75rem; }
+.avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--blue-soft); color: var(--blue); font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
+.byline a { color: var(--ink); font-weight: 700; text-decoration: none; }
+.article-figure { margin: 0 0 2rem; }
+.article-figure img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 1.25rem; border: 1px solid var(--line); display: block; }
+.article-body p { font-size: 1.05rem; line-height: 1.9; max-width: 68ch; }
+.article-body blockquote { margin: 1.75rem 0; padding: 1.25rem 1.5rem; background: var(--blue-soft); border-left: 4px solid var(--blue); border-radius: 0 1rem 1rem 0; color: var(--ink); font-size: 1.1rem; line-height: 1.7; font-style: italic; max-width: 68ch; }
+.comments h4 { font-size: 1.25rem; margin-bottom: 1rem; }
+.comments textarea { border-radius: 1rem; border-color: var(--line); padding: 1rem; box-shadow: none !important; resize: vertical; }
+.comments textarea:focus { border-color: var(--blue); }
+.comment-empty { color: var(--muted); font-size: .95rem; margin-top: 1.5rem; }
+.side-card { background: #fff; border: 1px solid var(--line); border-radius: 1.25rem; overflow: hidden; margin-bottom: 1.5rem; }
+.side-card h5 { font-size: 1rem; margin: 0; padding: 1.1rem 1.4rem; border-bottom: 1px solid var(--line); background: var(--paper); }
+.side-card .body { padding: 1.1rem 1.4rem; }
+.side-list { list-style: none; margin: 0; padding: 0; }
+.side-list a { display: flex; align-items: center; gap: .75rem; padding: .85rem 1.4rem; color: var(--ink); text-decoration: none; font-weight: 600; border-bottom: 1px solid var(--line); transition: background-color .15s, color .15s; }
+.side-list li:last-child a { border-bottom: 0; }
+.side-list a:hover { background: var(--blue-soft); color: var(--blue-dark); }
+.side-list i { color: var(--blue); font-size: .75rem; }
+.tag { display: inline-block; background: var(--blue-soft); color: var(--blue-dark); font-weight: 700; font-size: .85rem; padding: .35rem .9rem; border-radius: 999px; margin: 0 .35rem .35rem 0; }
+.side-crumbs { margin-bottom: 1.25rem; }
+.side-crumbs .breadcrumb { row-gap: .15rem; }
+@media (min-width: 768px) { .sticky-side { position: sticky; top: 96px; } }
+
+    </style>
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <img src="./assets/image/idn orian.png" alt="Logo IDN" class="rounded" />
+          <span class="brand-text"><i>E Report</i> <strong>IDN</strong></span>
+        </a>
+
+        <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto gap-lg-4 gap-1 pt-3 pt-lg-0 align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="index.html#hero">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link active" href="index.html#recent">Recent</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+            <li class="nav-item"><a class="nav-link" href="panduan.html">Guide</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container">
+        <!-- breadcrumb -->
+        <nav class="crumbs-wrap d-md-none" aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item"><a href="index.html#recent">All report</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Laporan keran masjid</li>
+          </ol>
+        </nav>
+
+        <div class="row my-4 mt-md-5 mb-md-5 g-4 g-lg-5">
+          <!-- artikel -->
+          <article class="col-md-8 article">
+            <span class="status-chip">Menunggu Penanganan</span>
+            <h1>Laporan keran masjid rusak</h1>
+            <div class="byline">
+              <span class="avatar" aria-hidden="true">F</span>
+              <span>Oleh <a href="#">Jonh Dounaily</a> &nbsp;|&nbsp; 1 jam yang lalu</span>
+            </div>
+
+            <figure class="article-figure">
+              <img src="./assets/image/keran masjid.png" alt="Keran wudhu yang rusak di masjid putra">
+            </figure>
+
+            <div class="article-body">
+              <p>Keran wudhu di area masjid putra mengalami kerusakan. Aliran air sangat kecil dan tidak stabil, bahkan sering bocor terus-menerus saat tidak digunakan. Kondisi ini sudah terjadi sejak 2 hari yang lalu dan mengganggu jamaah yang akan berwudhu.</p>
+              <blockquote>"Airnya bocor terus, jadi lantai jadi becek dan licin. Mohon segera diperbaiki."</blockquote>
+              <p>Dengan kondisi seperti ini, penggunaan air menjadi tidak efisien dan area wudhu menjadi kurang nyaman. Diharapkan pihak pengelola dapat segera melakukan pemeriksaan dan penggantian keran agar aktivitas ibadah kembali lancar.</p>
+            </div>
+
+            <hr class="my-5">
+
+            <section class="comments" aria-labelledby="komentar-title">
+              <h4 id="komentar-title">Komentar</h4>
+              <form id="commentForm">
+                <label for="commentText" class="visually-hidden">Komentar Anda</label>
+                <textarea id="commentText" class="form-control" rows="4" placeholder="Tulis komentar Anda..." required></textarea>
+                <button type="submit" class="btn btn-primary mt-3 px-4">
+                  Kirim komentar <i class="fa-solid fa-paper-plane ms-1"></i>
+                </button>
+              </form>
+              <div id="commentList" class="mt-4"></div>
+              <p class="comment-empty" id="commentEmpty">Belum ada komentar. Jadilah yang pertama menanggapi laporan ini.</p>
+            </section>
+          </article>
+
+          <!-- sidebar -->
+          <aside class="col-md-4">
+            <nav class="side-crumbs d-none d-md-block" aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="index.html#recent">All report</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Laporan keran masjid</li>
+              </ol>
+            </nav>
+
+            <div class="sticky-side">
+              <div class="side-card">
+                <h5>Laporan Serupa</h5>
+                <ul class="side-list">
+                  <li><a href="#"><i class="fa-solid fa-chevron-right"></i>Laporan AC panas</a></li>
+                  <li><a href="#"><i class="fa-solid fa-chevron-right"></i>Wifi burik 🛜</a></li>
+                  <li><a href="#"><i class="fa-solid fa-chevron-right"></i>Laporan AC panas</a></li>
+                </ul>
+              </div>
+
+              <div class="side-card">
+                <h5>Kategori</h5>
+                <div class="body">
+                  <span class="tag">Sekolah</span><span class="tag">Fasilitas</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <!-- footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row justify-content-between row-gap-4 py-5">
+
+                <div class="col-lg-4">
+                    <div class="footer-brand d-flex align-items-center gap-2 mb-3">
+                        <img src="assets/image/idn ori.webp" alt="Logo IDN" class="rounded">
+                        <h2 class="fw-bold m-0">E-Reports</h2>
+                    </div>
+                    <p class="lh-lg opacity-75 m-0">Platform pelaporan online untuk warga sekolah: cepat, aman, dan transparan.</p>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 d-flex flex-column gap-2">
+                    <h4>Menu</h4>
+                    <a href="index.html" class="footer-link text-white text-decoration-none">Home</a>
+                    <a href="index.html#about" class="footer-link text-white text-decoration-none">About</a>
+                    <a href="index.html#services" class="footer-link text-white text-decoration-none">Services</a>
+                    <a href="index.html#recent" class="footer-link text-white text-decoration-none">Recent</a>
+                    <a href="index.html#faq" class="footer-link text-white text-decoration-none">FAQ</a>
+                    <a href="panduan.html" class="footer-link text-white text-decoration-none">Guide</a>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4 contact-list d-flex flex-column gap-2">
+                    <h4>Contact Us</h4>
+                    <p class="m-0 d-flex align-items-center gap-2">
+                        <i class="fas fa-envelope"></i>
+                        donellyabdll@idn.sch.id
+                    </p>
+                    <p class="m-0">
+                        <a href="https://wa.me/6285199683299" target="_blank" rel="noopener"
+                            class="text-white text-decoration-none d-flex align-items-center gap-2">
+                            <i class="fab fa-whatsapp"></i>
+                            WhatsApp
+                        </a>
+                    </p>
+                    <p class="m-0 d-flex align-items-center gap-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Jalan Raya Serang, Cikande
+                    </p>
+                </div>
+            </div>
+
+            <div class="copyright text-center">
+                <p>&copy; Copyright by <span class="fw-bold">RPL-C class</span> 2026, All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 700,
+            disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        });
+
+        // Search, filter dan urutkan laporan
+        (function () {
+            var grid = document.getElementById('reportGrid');
+            var items = Array.prototype.slice.call(grid.children);
+            var form = document.getElementById('filterForm');
+            var search = document.getElementById('searchInput');
+            var category = document.getElementById('categorySelect');
+            var sort = document.getElementById('sortSelect');
+            var count = document.getElementById('resultCount');
+            var empty = document.getElementById('emptyState');
+
+            items.forEach(function (el, i) { el.dataset.order = i; });
+
+            function apply() {
+                var q = search.value.trim().toLowerCase();
+                var cat = category.value;
+                var visible = [];
+
+                items.forEach(function (el) {
+                    var matchText = !q || el.textContent.toLowerCase().indexOf(q) !== -1;
+                    var matchCat = cat === 'all' || el.dataset.category === cat;
+                    var show = matchText && matchCat;
+                    el.classList.toggle('d-none', !show);
+                    if (show) visible.push(el);
+                });
+
+                var mode = sort.value;
+                var sorted = items.slice().sort(function (a, b) {
+                    if (mode === 'newest') return a.dataset.days - b.dataset.days || a.dataset.order - b.dataset.order;
+                    if (mode === 'oldest') return b.dataset.days - a.dataset.days || a.dataset.order - b.dataset.order;
+                    return a.dataset.order - b.dataset.order;
+                });
+                sorted.forEach(function (el) { grid.appendChild(el); });
+
+                count.textContent = 'Showing ' + visible.length + ' of ' + items.length + ' reports';
+                empty.classList.toggle('d-none', visible.length > 0);
+            }
+
+            form.addEventListener('submit', function (e) { e.preventDefault(); apply(); });
+            search.addEventListener('input', apply);
+            category.addEventListener('change', apply);
+            sort.addEventListener('change', apply);
+            apply();
+        })();
+    </script>
+  </body>
+</html>
